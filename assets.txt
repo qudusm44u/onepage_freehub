@@ -1,0 +1,24 @@
+# Free Asset Sources for the One‑Page Site
+
+## Images (royalty‑free, no attribution required for commercial use)
+- Unsplash (https://unsplash.com)
+- Pexels (https://pexels.com)
+- Pixabay (https://pixabay.com)
+
+## Video / Animation Tools (free tier)
+- Lumen5 (https://lumen5.com) – create short video snippets from copy.
+- Clipchamp (https://clipchamp.com) – basic video editor, export up to 1080p.
+
+## Icons
+- Feather Icons (https://feathericons.com)
+- Heroicons (https://heroicons.com)
+
+## Fonts
+- Google Fonts (https://fonts.google.com) – select web‑safe fonts, e.g., Inter, Roboto.
+
+## Analytics
+- Google Analytics 4 (https://analytics.google.com) – free, use measurement ID G-XXXXXXX.
+
+## Advertising placeholders (to replace with real AdSense code once approved)
+- Banner: 728×90
+- Rectangle: 300×250 (mid‑content and footer)
