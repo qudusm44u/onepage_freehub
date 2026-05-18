@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mortgage Payoff Calculator – Reduce Interest & Pay Off Faster</title>
+  <meta name="description" content="Calculate your mortgage monthly payment, see how extra payments reduce interest and shorten the loan term. Quick, free calculator for faster payoff." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Mortgage Payoff Calculator</h1>
+    <p>Find out how extra monthly payments can cut years off your mortgage.</p>
+  </header>
+  <section class="content">
+    <form id="mortgageForm">
+      <label>Currency<br>
+        <select id="currency" required></select>
+      </label><br>
+      <label>Loan amount<br><input type="number" id="principal" required></label><br>
+      <label>Annual interest rate (%)<br><input type="number" step="0.01" id="rate" required></label><br>
+      <label>Loan term (years)<br><input type="number" id="years" required></label><br>
+      <label>Extra monthly payment (optional)<br><input type="number" id="extra" value="0"></label><br>
+      <button type="submit">Calculate</button>
+    </form>
+    <div id="result" style="margin-top:1.5rem;"></div>
+  </section>
+  <footer>
+    <p>&copy; 2026 Free Resource Hub. All rights reserved.</p>
+  </footer>
+  <script>
+    // Populate currency dropdown with a comprehensive list of ISO 4217 codes
+    const currencyList = [
+      "AED","AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD","BDT","BGN","BHD","BIF","BMD","BND","BOB","BRL","BSD","BTN","BWP","BYN","BZD","CAD","CDF","CHF","CLP","CNY","COP","CRC","CUC","CUP","CVE","CZK","DJF","DKK","DOP","DZD","EGP","ERN","ETB","EUR","FJD","FKP","GBP","GEL","GGP","GHS","GIP","GMD","GNF","GTQ","GYD","HKD","HNL","HRK","HTG","HUF","IDR","ILS","IMP","INR","IQD","IRR","ISK","JEP","JMD","JOD","JPY","KES","KGS","KHR","KMF","KPW","KRW","KWD","KYD","KZT","LAK","LBP","LKR","LRD","LSL","LYD","MAD","MDL","MGA","MKD","MMK","MNT","MOP","MRU","MUR","MVR","MWK","MXN","MYR","MZN","NAD","NGN","NIO","NOK","NPR","NZD","OMR","PAB","PEN","PGK","PHP","PKR","PLN","PYG","QAR","RON","RSD","RUB","RWF","SAR","SBD","SCR","SDG","SEK","SGD","SHP","SLL","SOS","SRD","STN","SVC","SYP","SZL","THB","TJS","TMT","TND","TOP","TRY","TTD","TVD","TWD","TZS","UAH","UGX","USD","UYU","UZS","VEF","VND","VUV","WST","XAF","XCD","XOF","XPF","YER","ZAR","ZMW","ZWD"
+    ];
+    const currencySelect = document.getElementById('currency');
+    currencyList.forEach(code => {
+      const opt = document.createElement('option');
+      opt.value = code;
+      opt.textContent = code;
+      currencySelect.appendChild(opt);
+    });
+    // Mortgage calculation with optional extra payment
+    function calculateMortgage(principal, annualRate, years, extra) {
+      const monthlyRate = annualRate / 100 / 12;
+      const n = years * 12;
+      const monthlyPayment = principal * monthlyRate / (1 - Math.pow(1 + monthlyRate, -n));
+      if (extra <= 0) {
+        const totalInterest = monthlyPayment * n - principal;
+        return {monthly: monthlyPayment, months: n, totalInterest};
+      }
+      let balance = principal;
+      let month = 0;
+      let totalInterest = 0;
+      while (balance > 0) {
+        const interest = balance * monthlyRate;
+        const principalPortion = Math.min(monthlyPayment - interest + extra, balance);
+        balance -= principalPortion;
+        totalInterest += interest;
+        month++;
+        if (month > n * 2) break; // safety
+      }
+      return {monthly: monthlyPayment + extra, months: month, totalInterest};
+    }
+    document.getElementById('mortgageForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const currency = document.getElementById('currency').value;
+      const formatter = new Intl.NumberFormat(undefined, { style: 'currency', currency });
+      const principal = parseFloat(document.getElementById('principal').value);
+      const annualRate = parseFloat(document.getElementById('rate').value);
+      const years = parseInt(document.getElementById('years').value);
+      const extra = parseFloat(document.getElementById('extra').value) || 0;
+      const result = calculateMortgage(principal, annualRate, years, extra);
+      const regularMonthly = (principal * (annualRate / 100 / 12) / (1 - Math.pow(1 + annualRate / 100 / 12, -years * 12))).toFixed(2);
+      const monthsSaved = years * 12 - result.months;
+      const yearsSaved = (monthsSaved / 12).toFixed(1);
+      const totalPaid = (result.monthly * result.months).toFixed(2);
+      const totalInterest = result.totalInterest.toFixed(2);
+      const output = `<h2>Results</h2>
+        <p>Regular monthly payment (no extra): ${formatter.format(regularMonthly)}</p>
+        <p>With extra payment: ${formatter.format(result.monthly.toFixed(2))} per month</p>
+        <p>Payoff time: ${Math.floor(result.months / 12)} years and ${result.months % 12} months (${result.months} months total)</p>
+        <p>Time saved: ${yearsSaved} years (${monthsSaved} months)</p>
+        <p>Total interest paid: ${formatter.format(totalInterest)}</p>
+        <p>Total amount paid: ${formatter.format(totalPaid)}</p>`;
+      document.getElementById('result').innerHTML = output;
+    });
+  </script>
+</body>
+</html>
