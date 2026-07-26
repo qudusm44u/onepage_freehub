@@ -1,0 +1,5 @@
+# Cloudflare Pages — redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+/home        /                 301
+/shop        /collection.html  301
+/atelier     /about.html       301
