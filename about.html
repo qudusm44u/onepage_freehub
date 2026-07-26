@@ -36,7 +36,7 @@
   </header>
 
   <section class="page-hero">
-    <div class="ph" data-label="The Atelier"><img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=2000&q=80" alt="The Atelier" /></div>
+    <div class="ph" data-label="The Atelier"><img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=2000&q=80" data-parallax="0.08" alt="The Atelier" /></div>
     <div class="page-hero__scrim"></div>
     <div class="page-hero__inner">
       <p class="eyebrow" style="color:rgba(255,255,255,.85)">Est. London, 2018</p>
@@ -53,7 +53,7 @@
   </section>
 
   <section class="split split--rev">
-    <div class="split__media"><div class="ph" data-label="Craft"><img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=80" alt="Craftsmanship" loading="lazy"></div></div>
+    <div class="split__media"><div class="ph" data-label="Craft"><img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=80" data-parallax="0.06" alt="Craftsmanship" loading="lazy"></div></div>
     <div class="split__body reveal">
       <span class="eyebrow">Our Craft</span>
       <h2 class="display section__title">The hand of the maker</h2>
@@ -110,7 +110,7 @@
 
   <aside class="drawer" aria-label="Shopping bag">
     <div class="drawer__head"><h3>Your Bag</h3><button class="drawer__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button></div>
-    <div class="drawer__body"></div>
+    <div class="drawer__body" data-lenis-prevent></div>
     <div class="drawer__foot"><div class="drawer__sub"><span class="l">Subtotal</span><span class="v" data-subtotal>£0</span></div><p class="drawer__tax">Shipping &amp; taxes calculated at checkout.</p><button class="btn btn--solid" data-checkout>Proceed to checkout</button></div>
   </aside>
 
@@ -122,6 +122,7 @@
   <div class="overlay"></div>
   <button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24"><polyline points="6 14 12 8 18 14"/></svg></button>
 
+  <script src="js/lenis.min.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>
 </html>

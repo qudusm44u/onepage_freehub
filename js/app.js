@@ -10,6 +10,12 @@
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
   const money = (n) => "£" + n.toLocaleString("en-GB", { minimumFractionDigits: 0 });
 
+  // Smooth-scroll instance (assigned in section 11) + motion preference
+  let lenis = null;
+  const REDUCE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const lockScroll   = () => { lenis ? lenis.stop()  : (document.body.style.overflow = "hidden"); };
+  const unlockScroll = () => { lenis ? lenis.start() : (document.body.style.overflow = ""); };
+
   /* ---------------------------------------------------------------
      1. Image fallback — mark art-directed placeholders that failed
      --------------------------------------------------------------- */
@@ -57,12 +63,12 @@
      --------------------------------------------------------------- */
   const mMenu = $(".mobile-menu");
   const overlay = $(".overlay");
-  const openMenu  = () => { mMenu?.classList.add("is-open");  overlay?.classList.add("is-open"); document.body.style.overflow = "hidden"; };
+  const openMenu  = () => { mMenu?.classList.add("is-open");  overlay?.classList.add("is-open"); lockScroll(); };
   const closeAll  = () => {
     mMenu?.classList.remove("is-open");
     $(".drawer")?.classList.remove("is-open");
     overlay?.classList.remove("is-open");
-    document.body.style.overflow = "";
+    unlockScroll();
   };
   $(".nav__toggle")?.addEventListener("click", openMenu);
   $(".mobile-menu__close")?.addEventListener("click", closeAll);
@@ -101,7 +107,7 @@
   const subEl    = $("[data-subtotal]");
   const countEls = $$(".cart-count");
 
-  const openCart  = () => { drawer?.classList.add("is-open"); overlay?.classList.add("is-open"); document.body.style.overflow = "hidden"; };
+  const openCart  = () => { drawer?.classList.add("is-open"); overlay?.classList.add("is-open"); lockScroll(); };
   $$("[data-open-cart]").forEach((b) => b.addEventListener("click", (e) => { e.preventDefault(); render(); openCart(); }));
   $(".drawer__close")?.addEventListener("click", closeAll);
 
@@ -231,4 +237,54 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => t.classList.remove("is-open"), 2600);
   }
+
+  /* ---------------------------------------------------------------
+     11. Smooth momentum scroll (Lenis) + parallax
+     This is what gives the site its weighted, "designer" motion.
+     --------------------------------------------------------------- */
+  const parallaxEls = $$("[data-parallax]");
+  function updateParallax() {
+    if (!parallaxEls.length) return;
+    const vh = window.innerHeight;
+    for (const el of parallaxEls) {
+      const box = el.parentElement.getBoundingClientRect();
+      if (box.bottom < -200 || box.top > vh + 200) continue;      // skip off-screen
+      const centre = box.top + box.height / 2 - vh / 2;           // distance from viewport centre
+      const speed = parseFloat(el.dataset.parallax) || 0.08;
+      el.style.transform = `translate3d(0, ${(-centre * speed).toFixed(2)}px, 0) scale(1.22)`;
+    }
+  }
+
+  const canSmooth = !REDUCE && typeof window.Lenis === "function" && window.innerWidth > 768;
+  if (canSmooth) {
+    lenis = new window.Lenis({
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo — long, weighted glide
+      smoothWheel: true,
+      wheelMultiplier: 0.95,
+      touchMultiplier: 1.6,
+    });
+    const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+    lenis.on("scroll", () => { setHeader(); updateParallax(); });
+  } else {
+    // No smooth scroll — still drive parallax (unless reduced motion) from native scroll
+    if (!REDUCE) window.addEventListener("scroll", updateParallax, { passive: true });
+  }
+  window.addEventListener("resize", updateParallax, { passive: true });
+  if (!REDUCE) updateParallax();
+
+  /* Smooth-scroll anchor links (nav, scroll cue, "view the lookbook") */
+  $$('a[href^="#"]').forEach((a) => {
+    const id = a.getAttribute("href");
+    if (id.length < 2) return;
+    a.addEventListener("click", (e) => {
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      closeAll();
+      if (lenis) lenis.scrollTo(target, { offset: -74, duration: 1.4 });
+      else target.scrollIntoView({ behavior: REDUCE ? "auto" : "smooth" });
+    });
+  });
 })();
