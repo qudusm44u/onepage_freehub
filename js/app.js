@@ -229,8 +229,8 @@
        const FORM_ENDPOINT = "https://formspree.io/f/abcdwxyz";
      Until you do, the forms run in friendly demo mode.
      --------------------------------------------------------------- */
-  const FORM_ENDPOINT = "https://formspree.io/f/XXXXXXXX"; // ← replace XXXXXXXX with your Formspree form ID
-  const FORM_LIVE = !/XXXXXXXX/.test(FORM_ENDPOINT);
+  const FORM_ENDPOINT = "https://formspree.io/f/mykrleke"; // ← replace XXXXXXXX with your Formspree form ID
+  const FORM_LIVE = !/mykrleke/.test(FORM_ENDPOINT);
   const emailOk = (v) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test((v || "").trim());
 
   function wireForm(form, msgEl, successText) {
