@@ -26,6 +26,14 @@
     else img.addEventListener("load", () => {});
   });
 
+  // Hero aerial photo: if it fails to load, reveal the self-contained skyline behind it
+  const heroPhoto = $(".hero__photo");
+  if (heroPhoto) {
+    const hide = () => { heroPhoto.style.display = "none"; };
+    heroPhoto.addEventListener("error", hide);
+    if (heroPhoto.complete && heroPhoto.naturalWidth === 0) hide();
+  }
+
   /* ---------------------------------------------------------------
      2. Announcement bar rotation
      --------------------------------------------------------------- */
@@ -236,6 +244,59 @@
     requestAnimationFrame(() => t.classList.add("is-open"));
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => t.classList.remove("is-open"), 2600);
+  }
+
+  /* ---------------------------------------------------------------
+     10b. Animated stat counters
+     --------------------------------------------------------------- */
+  const counters = $$("[data-count]");
+  function animateCount(el) {
+    const target  = parseFloat(el.dataset.count);
+    const dec     = parseInt(el.dataset.decimals || "0", 10);
+    const suffix  = el.dataset.suffix || "";
+    const fmt = (n) => dec > 0 ? n.toFixed(dec) : Math.round(n).toLocaleString("en-GB");
+    if (REDUCE) { el.textContent = fmt(target) + suffix; return; }
+    const dur = 1600, start = performance.now();
+    const tick = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(tick); else el.textContent = fmt(target) + suffix;
+    };
+    requestAnimationFrame(tick);
+  }
+  if (counters.length && "IntersectionObserver" in window) {
+    const cio = new IntersectionObserver((ents) => {
+      ents.forEach((en) => { if (en.isIntersecting) { cio.unobserve(en.target); animateCount(en.target); } });
+    }, { threshold: 0.4 });
+    counters.forEach((c) => cio.observe(c));
+  } else {
+    counters.forEach(animateCount);
+  }
+
+  /* ---------------------------------------------------------------
+     10c. Treasury yield calculator
+     --------------------------------------------------------------- */
+  const calcBal = $("#calcBalance"), calcTerm = $("#calcTerm");
+  if (calcBal && calcTerm) {
+    const RATE = 0.041; // 4.10% AER (placeholder)
+    const balOut  = $("[data-calc-balance]");
+    const termOut = $("[data-calc-term]");
+    const earnOut = $("[data-calc-earn]");
+    const subOut  = $("[data-calc-sub]");
+    const gbp = (n) => Math.round(n).toLocaleString("en-GB");
+    const months = (m) => m + (m === 1 ? " month" : " months");
+    const runCalc = () => {
+      const bal = +calcBal.value, term = +calcTerm.value;
+      const interest = bal * RATE * (term / 12);
+      if (balOut)  balOut.textContent  = "£" + gbp(bal);
+      if (termOut) termOut.textContent = months(term);
+      if (earnOut) earnOut.textContent = gbp(interest);
+      if (subOut)  subOut.textContent  = `on £${gbp(bal)} over ${months(term)}`;
+    };
+    calcBal.addEventListener("input", runCalc);
+    calcTerm.addEventListener("input", runCalc);
+    runCalc();
   }
 
   /* ---------------------------------------------------------------

@@ -1,358 +1,385 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.className+=" js";</script>
-  <title>ÉCLAT LONDON — Modern Luxury, Quietly Made</title>
-  <meta name="description" content="ÉCLAT LONDON — a British maison of quiet-luxury ready-to-wear. Discover the Autumn Winter 2026 collection: tailoring, knitwear and eveningwear crafted in Europe." />
-  <meta name="theme-color" content="#17130f" />
+  <title>Worthwhile — Modern Financial Infrastructure for Ambitious Businesses</title>
+  <meta name="description" content="Worthwhile is the financial platform for ambitious businesses — multi-currency accounts, global payments, corporate cards and treasury, engineered in the heart of Canary Wharf, London." />
+  <meta name="theme-color" content="#0a0e17" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="ÉCLAT LONDON — Modern Luxury, Quietly Made" />
-  <meta property="og:description" content="Autumn Winter 2026. Tailoring, knitwear and eveningwear, crafted in Europe." />
+  <meta property="og:title" content="Worthwhile — Money, worth your while." />
+  <meta property="og:description" content="Multi-currency accounts, global payments and treasury for ambitious businesses. Engineered in Canary Wharf." />
 
-  <!-- Favicon: inline monogram, no external file -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2317130f'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23f7f3ec' text-anchor='middle'%3E%C3%89%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0e17'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='600' fill='%230e9f6e' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <noscript><style>html.js .reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
-  <!-- ============ ANNOUNCEMENT ============ -->
+  <!-- ANNOUNCEMENT -->
   <div class="announce" aria-label="Announcements">
     <div class="announce__track">
-      <div class="announce__item is-active">Complimentary worldwide shipping over £300</div>
-      <div class="announce__item">The Autumn Winter 2026 collection has arrived</div>
-      <div class="announce__item">Private atelier appointments now available in Mayfair</div>
+      <div class="announce__item is-active">New — earn up to 4.10% AER on business reserves</div>
+      <div class="announce__item">Worthwhile is now live in 40+ markets</div>
+      <div class="announce__item">Book a private demo at our Canary Wharf office</div>
     </div>
   </div>
 
-  <!-- ============ HEADER ============ -->
+  <!-- HEADER -->
   <header class="site-header is-transparent">
     <div class="wrap nav">
       <button class="nav__toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
       <nav class="nav__links" aria-label="Primary">
-        <a href="collection.html">New In</a>
-        <a href="collection.html">Ready-to-Wear</a>
-        <a href="collection.html">The Edit</a>
-        <a href="about.html">Atelier</a>
+        <a href="platform.html">Platform</a>
+        <a href="platform.html#pricing">Pricing</a>
+        <a href="company.html#security">Security</a>
+        <a href="company.html">Company</a>
       </nav>
-
-      <a class="brand" href="index.html">Éclat<small>London</small></a>
-
+      <a class="brand" href="index.html">Worthwhile<small>Fintech</small></a>
       <div class="nav__icons">
-        <button class="icon-btn" aria-label="Search">
-          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-        </button>
-        <a class="icon-btn" href="about.html" aria-label="Account">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-        </a>
-        <button class="icon-btn" data-open-cart aria-label="Open bag">
-          <svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-          <span class="cart-count">0</span>
-        </button>
+        <a class="link-underline nav__login" href="company.html">Log in</a>
+        <a class="btn btn--accent nav__cta" href="#open">Open account</a>
       </div>
     </div>
   </header>
 
-  <!-- ============ HERO ============ -->
+  <!-- HERO -->
   <section class="hero" data-hero>
-    <div class="hero__media ph" data-label="Éclat London">
-      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=2000&q=80" data-parallax="0.07" alt="Autumn Winter 2026 editorial" fetchpriority="high" />
+    <!-- Self-contained Canary Wharf skyline (always renders, copyright-free) -->
+    <div class="skyline" aria-hidden="true">
+      <div class="skyline__stars">
+        <i style="left:12%;top:16%"></i><i style="left:23%;top:26%;animation-delay:1s"></i>
+        <i style="left:37%;top:12%;animation-delay:2s"></i><i style="left:58%;top:20%;animation-delay:.6s"></i>
+        <i style="left:71%;top:14%;animation-delay:1.7s"></i><i style="left:84%;top:24%;animation-delay:2.4s"></i>
+        <i style="left:92%;top:10%;animation-delay:.9s"></i>
+      </div>
+      <svg viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <linearGradient id="bldg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2b46"/><stop offset="1" stop-color="#0a1120"/></linearGradient>
+          <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#18233f"/><stop offset="1" stop-color="#0a0f1c"/></linearGradient>
+        </defs>
+        <!-- distant layer -->
+        <g fill="#101a2e" opacity=".75">
+          <rect x="40" y="250" width="60" height="150"/><rect x="150" y="270" width="46" height="130"/>
+          <rect x="1080" y="255" width="60" height="145"/><rect x="1300" y="268" width="70" height="132"/>
+          <rect x="1180" y="285" width="44" height="115"/>
+        </g>
+        <!-- main skyline -->
+        <g fill="url(#bldg)">
+          <rect x="90" y="210" width="86" height="190"/>
+          <rect x="196" y="170" width="70" height="230"/>
+          <rect x="286" y="230" width="60" height="170"/>
+          <rect x="360" y="150" width="96" height="250"/>
+          <rect x="470" y="200" width="66" height="200"/>
+          <rect x="548" y="120" width="86" height="280"/>
+          <!-- One Canada Square (pyramid-topped icon) -->
+          <rect x="654" y="70" width="118" height="330"/>
+          <polygon points="654,70 713,26 772,70"/>
+          <rect x="790" y="140" width="80" height="260"/>
+          <rect x="884" y="185" width="70" height="215"/>
+          <rect x="966" y="128" width="92" height="272"/>
+          <rect x="1074" y="205" width="60" height="195"/>
+          <rect x="1146" y="165" width="86" height="235"/>
+          <rect x="1244" y="215" width="70" height="185"/>
+          <rect x="1326" y="188" width="74" height="212"/>
+        </g>
+        <!-- window lights -->
+        <g fill="#f0c274" opacity=".85">
+          <rect x="676" y="96" width="8" height="8"/><rect x="700" y="96" width="8" height="8"/><rect x="724" y="96" width="8" height="8"/><rect x="748" y="96" width="8" height="8"/>
+          <rect x="676" y="128" width="8" height="8" opacity=".5"/><rect x="700" y="128" width="8" height="8"/><rect x="724" y="128" width="8" height="8" opacity=".6"/><rect x="748" y="128" width="8" height="8"/>
+          <rect x="676" y="160" width="8" height="8"/><rect x="700" y="160" width="8" height="8" opacity=".4"/><rect x="724" y="160" width="8" height="8"/><rect x="748" y="160" width="8" height="8" opacity=".7"/>
+          <rect x="676" y="220" width="8" height="8" opacity=".5"/><rect x="724" y="220" width="8" height="8"/><rect x="748" y="260" width="8" height="8" opacity=".6"/><rect x="700" y="300" width="8" height="8"/>
+          <rect x="386" y="176" width="7" height="7"/><rect x="410" y="176" width="7" height="7" opacity=".5"/><rect x="434" y="176" width="7" height="7"/><rect x="410" y="210" width="7" height="7"/><rect x="386" y="250" width="7" height="7" opacity=".6"/>
+          <rect x="570" y="150" width="7" height="7"/><rect x="596" y="150" width="7" height="7" opacity=".5"/><rect x="570" y="190" width="7" height="7"/><rect x="596" y="230" width="7" height="7"/>
+          <rect x="988" y="156" width="7" height="7"/><rect x="1014" y="156" width="7" height="7" opacity=".5"/><rect x="988" y="196" width="7" height="7"/><rect x="1014" y="240" width="7" height="7" opacity=".6"/>
+          <rect x="1168" y="195" width="7" height="7"/><rect x="1196" y="195" width="7" height="7" opacity=".5"/><rect x="1168" y="235" width="7" height="7"/>
+          <rect x="812" y="170" width="7" height="7" opacity=".6"/><rect x="836" y="170" width="7" height="7"/><rect x="812" y="220" width="7" height="7"/>
+        </g>
+        <g fill="#43d6a0" opacity=".9"><rect x="724" y="192" width="8" height="8"/><rect x="410" y="290" width="7" height="7"/><rect x="1014" y="300" width="7" height="7"/></g>
+        <!-- water + reflection -->
+        <rect x="0" y="360" width="1440" height="40" fill="url(#water)"/>
+        <g fill="#f0c274" opacity=".14"><rect x="712" y="360" width="4" height="34"/><rect x="410" y="360" width="3" height="30"/><rect x="1010" y="360" width="3" height="26"/></g>
+      </svg>
     </div>
+    <!-- Optional real aerial photo — takes over when it loads; skyline shows if it doesn't -->
+    <img class="hero__photo" src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=2000&q=80" data-parallax="0.06" data-photo alt="Aerial drone view of Canary Wharf, London at dusk" fetchpriority="high" />
     <div class="hero__scrim"></div>
     <div class="wrap hero__inner reveal">
-      <p class="eyebrow">Autumn / Winter 2026</p>
-      <h1 class="display hero__title">The Quiet Hour</h1>
-      <p class="hero__sub">A study in restraint — tailoring, cashmere and eveningwear made slowly, in the ateliers of Europe.</p>
+      <span class="hero__badge"><span class="dot"></span> Trusted by 12,000+ finance teams</span>
+      <h1 class="display hero__title">Money, worth<br>your while.</h1>
+      <p class="hero__sub">The financial platform for ambitious businesses — multi-currency accounts, global payments and treasury, engineered in the heart of Canary Wharf.</p>
       <div class="hero__ctas">
-        <a href="collection.html" class="btn btn--light">Discover the collection</a>
-        <a href="#edit" class="btn btn--light">View the lookbook</a>
+        <a href="#open" class="btn btn--accent">Open an account</a>
+        <a href="platform.html" class="btn btn--light">Explore the platform</a>
       </div>
+      <p class="hero__trust"><b>FCA-authorised</b> &nbsp;·&nbsp; Funds safeguarded &nbsp;·&nbsp; 256-bit encryption</p>
     </div>
     <div class="scroll-cue"><span></span>Scroll</div>
   </section>
 
-  <!-- ============ MARQUEE ============ -->
-  <div class="marquee" aria-hidden="true">
+  <!-- FX TICKER -->
+  <div class="marquee fx" aria-hidden="true">
     <div class="marquee__track">
-      <span>Crafted in Europe</span><span>Responsibly Sourced Cashmere</span><span>Made in Limited Runs</span>
-      <span>Complimentary Shipping</span><span>Atelier Appointments</span><span>Crafted in Europe</span>
-      <span>Responsibly Sourced Cashmere</span><span>Made in Limited Runs</span><span>Complimentary Shipping</span><span>Atelier Appointments</span>
+      <span>GBP / USD <b class="up">1.2841 ▲</b></span><span>EUR / GBP <b class="dn">0.8532 ▼</b></span><span>GBP / JPY <b class="up">191.24 ▲</b></span>
+      <span>USD / SGD <b class="up">1.3402 ▲</b></span><span>GBP / AED <b class="dn">4.6910 ▼</b></span><span>EUR / USD <b class="up">1.0872 ▲</b></span>
+      <span>GBP / USD <b class="up">1.2841 ▲</b></span><span>EUR / GBP <b class="dn">0.8532 ▼</b></span><span>GBP / JPY <b class="up">191.24 ▲</b></span>
+      <span>USD / SGD <b class="up">1.3402 ▲</b></span><span>GBP / AED <b class="dn">4.6910 ▼</b></span><span>EUR / USD <b class="up">1.0872 ▲</b></span>
     </div>
   </div>
 
-  <!-- ============ NEW SEASON PRODUCTS ============ -->
-  <section class="section wrap" id="new">
-    <div class="section__head center reveal">
-      <span class="eyebrow">The New Season</span>
-      <h2 class="display section__title">Pieces of the Moment</h2>
-      <p>Considered essentials and quiet statements — each made in limited numbers.</p>
+  <!-- LOGO CLOUD -->
+  <div class="logos wrap">
+    <p>Trusted by finance teams at</p>
+    <div class="logos__row reveal">
+      <span>Meridian</span><span>Northwind</span><span>Ástra</span><span>Halcyon</span><span>Beacon&nbsp;Row</span><span>Kestrel</span>
     </div>
+  </div>
 
-    <div class="products">
-      <!-- Product 1 -->
-      <article class="card reveal" data-reveal-delay="1" data-product
-               data-id="silk-slip" data-name="Séraphine Silk Slip Dress" data-price="480"
-               data-variant="Champagne / UK 10"
-               data-img="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80"
-               data-g1="#d8c9b6" data-g2="#8a7d6b">
-        <div class="card__media">
-          <div class="ph" data-label="Silk Slip">
-            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Séraphine Silk Slip Dress" loading="lazy" />
-            <img class="card__img--hover" src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy" />
-          </div>
-          <span class="card__tag">New</span>
-          <button class="card__wish" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-9.5A3.5 3.5 0 0 1 12 8a3.5 3.5 0 0 1 7 2.5C19 15.5 12 20 12 20z"/></svg></button>
-          <button class="card__add" data-add>Add to bag</button>
-        </div>
-        <h3 class="card__name">Séraphine Silk Slip Dress</h3>
-        <div class="card__meta"><span class="card__price">£480</span></div>
-        <div class="card__swatches"><span class="swatch" style="background:#e8dccb"></span><span class="swatch" style="background:#1d1a16"></span><span class="swatch" style="background:#6a5a4a"></span></div>
-      </article>
-
-      <!-- Product 2 -->
-      <article class="card reveal" data-reveal-delay="2" data-product
-               data-id="wool-coat" data-name="Belgravia Wool Coat" data-price="920"
-               data-variant="Camel / UK 10"
-               data-img="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?auto=format&fit=crop&w=800&q=80"
-               data-g1="#c9b79c" data-g2="#7d6e58">
-        <div class="card__media">
-          <div class="ph" data-label="Wool Coat">
-            <img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?auto=format&fit=crop&w=800&q=80" alt="Belgravia Wool Coat" loading="lazy" />
-            <img class="card__img--hover" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy" />
-          </div>
-          <span class="card__tag">Atelier</span>
-          <button class="card__wish" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-9.5A3.5 3.5 0 0 1 12 8a3.5 3.5 0 0 1 7 2.5C19 15.5 12 20 12 20z"/></svg></button>
-          <button class="card__add" data-add>Add to bag</button>
-        </div>
-        <h3 class="card__name">Belgravia Wool Coat</h3>
-        <div class="card__meta"><span class="card__price">£920</span></div>
-        <div class="card__swatches"><span class="swatch" style="background:#c9b79c"></span><span class="swatch" style="background:#2b2621"></span></div>
-      </article>
-
-      <!-- Product 3 -->
-      <article class="card reveal" data-reveal-delay="3" data-product
-               data-id="cashmere-knit" data-name="Maison Cashmere Knit" data-price="360"
-               data-variant="Oatmeal / S"
-               data-img="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=800&q=80"
-               data-g1="#d3c7b4" data-g2="#8f836f">
-        <div class="card__media">
-          <div class="ph" data-label="Cashmere Knit">
-            <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=800&q=80" alt="Maison Cashmere Knit" loading="lazy" />
-            <img class="card__img--hover" src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy" />
-          </div>
-          <button class="card__wish" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-9.5A3.5 3.5 0 0 1 12 8a3.5 3.5 0 0 1 7 2.5C19 15.5 12 20 12 20z"/></svg></button>
-          <button class="card__add" data-add>Add to bag</button>
-        </div>
-        <h3 class="card__name">Maison Cashmere Knit</h3>
-        <div class="card__meta"><span class="card__price"><del>£420</del>£360</span></div>
-        <div class="card__swatches"><span class="swatch" style="background:#d3c7b4"></span><span class="swatch" style="background:#9a3b34"></span><span class="swatch" style="background:#3a4a55"></span></div>
-      </article>
-
-      <!-- Product 4 -->
-      <article class="card reveal" data-reveal-delay="4" data-product
-               data-id="eve-gown" data-name="Nocturne Evening Gown" data-price="1180"
-               data-variant="Noir / UK 8"
-               data-img="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80"
-               data-g1="#4a4038" data-g2="#191410">
-        <div class="card__media">
-          <div class="ph" data-label="Evening Gown">
-            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Nocturne Evening Gown" loading="lazy" />
-            <img class="card__img--hover" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy" />
-          </div>
-          <span class="card__tag">Limited</span>
-          <button class="card__wish" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-9.5A3.5 3.5 0 0 1 12 8a3.5 3.5 0 0 1 7 2.5C19 15.5 12 20 12 20z"/></svg></button>
-          <button class="card__add" data-add>Add to bag</button>
-        </div>
-        <h3 class="card__name">Nocturne Evening Gown</h3>
-        <div class="card__meta"><span class="card__price">£1,180</span></div>
-        <div class="card__swatches"><span class="swatch" style="background:#1d1a16"></span><span class="swatch" style="background:#6b1f2a"></span></div>
-      </article>
-    </div>
-
-    <div class="center reveal" style="margin-top:3.4rem">
-      <a href="collection.html" class="btn">Shop all ready-to-wear</a>
-    </div>
-  </section>
-
-  <!-- ============ EDITORIAL SPLIT — ATELIER ============ -->
-  <section class="split">
-    <div class="split__media">
-      <div class="ph" data-label="The Atelier">
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=80" data-parallax="0.06" alt="Inside the atelier" loading="lazy" />
+  <!-- STATS -->
+  <section class="stats">
+    <div class="section wrap">
+      <div class="stats__grid">
+        <div class="stat reveal"><div class="stat__num"><span class="accent">£</span><span data-count="4.2" data-decimals="1">0</span><span class="accent">B</span></div><div class="stat__label">Processed annually</div></div>
+        <div class="stat reveal" data-reveal-delay="1"><div class="stat__num"><span data-count="180">0</span>+</div><div class="stat__label">Countries served</div></div>
+        <div class="stat reveal" data-reveal-delay="2"><div class="stat__num"><span data-count="99.99" data-decimals="2">0</span><span class="accent">%</span></div><div class="stat__label">Platform uptime</div></div>
+        <div class="stat reveal" data-reveal-delay="3"><div class="stat__num"><span data-count="12000" data-suffix="+">0</span></div><div class="stat__label">Businesses onboard</div></div>
       </div>
     </div>
-    <div class="split__body reveal">
-      <span class="eyebrow">The Atelier</span>
-      <h2 class="display section__title">Made slowly,<br>made to last</h2>
-      <p>Every Éclat piece begins as a single toile, cut and re-cut by hand until the line is exactly right. We work in small European workshops with fabrics milled in Italy and Scotland — never rushed, never in excess.</p>
-      <p>It is luxury that whispers: the weight of a coat, the fall of silk, the quiet confidence of something made properly.</p>
-      <p class="signature">— The House of Éclat</p>
-      <p style="margin-top:1.6rem"><a href="about.html" class="link-underline">Discover our story</a></p>
-    </div>
   </section>
 
-  <!-- ============ LOOKBOOK / THE EDIT ============ -->
-  <section class="section wrap" id="edit">
+  <!-- FEATURES -->
+  <section class="section wrap" id="platform">
     <div class="section__head center reveal">
-      <span class="eyebrow">The Edit</span>
-      <h2 class="display section__title">A/W 2026 Lookbook</h2>
-      <p>Nine looks photographed at first light — an ode to the quiet hour before the day begins.</p>
+      <span class="eyebrow">The Platform</span>
+      <h2 class="display section__title">Every money movement, in one place</h2>
+      <p>Accounts, payments, cards and treasury — unified on infrastructure built for scale and speed.</p>
     </div>
-    <div class="lookbook reveal">
-      <a class="look a" href="collection.html"><div class="ph" data-label="Look 01"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80" alt="Look one" loading="lazy"></div><div class="look__cap"><div class="t">Look 01</div><div class="s">The Tailored Coat</div></div></a>
-      <a class="look b" href="collection.html"><div class="ph" data-label="Look 02"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="Look two" loading="lazy"></div><div class="look__cap"><div class="t">Look 02</div><div class="s">Cashmere Ease</div></div></a>
-      <a class="look c" href="collection.html"><div class="ph" data-label="Look 03"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80" alt="Look three" loading="lazy"></div><div class="look__cap"><div class="t">Look 03</div><div class="s">Evening Noir</div></div></a>
-      <a class="look d" href="collection.html"><div class="ph" data-label="Look 04"><img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80" alt="Look four" loading="lazy"></div><div class="look__cap"><div class="t">Look 04</div><div class="s">The Slip</div></div></a>
-      <a class="look e" href="collection.html"><div class="ph" data-label="Look 05"><img src="https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=700&q=80" alt="Look five" loading="lazy"></div><div class="look__cap"><div class="t">Look 05</div><div class="s">Soft Tailoring</div></div></a>
-      <a class="look f" href="collection.html"><div class="ph" data-label="Look 06"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&q=80" alt="Look six" loading="lazy"></div><div class="look__cap"><div class="t">Look 06</div><div class="s">The Accessories</div></div></a>
+    <div class="features">
+      <article class="feature reveal">
+        <div class="feature__ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></div>
+        <h3>Multi-currency accounts</h3>
+        <p>Hold, receive and send 30+ currencies with local account details in the UK, EU, US and beyond.</p>
+        <a href="platform.html">Learn more</a>
+      </article>
+      <article class="feature reveal" data-reveal-delay="1">
+        <div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M3 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+        <h3>Global payments</h3>
+        <p>Move money to 180+ countries with interbank FX and same-day settlement on major corridors.</p>
+        <a href="platform.html">Learn more</a>
+      </article>
+      <article class="feature reveal" data-reveal-delay="2">
+        <div class="feature__ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 15h4"/></svg></div>
+        <h3>Corporate cards</h3>
+        <p>Issue unlimited virtual and physical cards with real-time controls, limits and receipt capture.</p>
+        <a href="platform.html">Learn more</a>
+      </article>
+      <article class="feature reveal">
+        <div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></div>
+        <h3>Treasury &amp; yield</h3>
+        <p>Put idle cash to work at up to 4.10% AER, with liquidity you can access the same day.</p>
+        <a href="#calc">See the calculator</a>
+      </article>
+      <article class="feature reveal" data-reveal-delay="1">
+        <div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 8l5-5 5 5M7 16l5 5 5-5"/></svg></div>
+        <h3>FX at interbank</h3>
+        <p>Convert at the mid-market rate with transparent, single-digit basis-point pricing. No hidden spread.</p>
+        <a href="platform.html">Learn more</a>
+      </article>
+      <article class="feature reveal" data-reveal-delay="2">
+        <div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg></div>
+        <h3>Developer API</h3>
+        <p>Embed accounts, payments and cards with a modern REST API, webhooks and SDKs. Ship in days.</p>
+        <a href="platform.html">Read the docs</a>
+      </article>
     </div>
   </section>
 
-  <!-- ============ CATEGORIES ============ -->
+  <!-- DASHBOARD SPLIT -->
+  <section class="split">
+    <div class="split__body reveal" style="background:var(--bone)">
+      <span class="eyebrow">One dashboard</span>
+      <h2 class="display section__title">See every pound,<br>in real time</h2>
+      <p>Balances, transactions, cards and FX across every entity and currency — reconciled the moment money moves. Give your whole finance team a single source of truth.</p>
+      <p style="margin-top:1.4rem"><a href="platform.html" class="link-underline">Tour the platform</a></p>
+    </div>
+    <div class="split__body" style="background:var(--navy);align-items:center">
+      <div class="mock reveal" style="width:min(460px,100%)">
+        <div class="mock__bar"><i></i><i></i><i></i><span class="mock__label">Worthwhile · Treasury</span></div>
+        <div class="mock__balance">Total balance</div>
+        <div class="mock__big">£2,481,930<span style="font-size:1.4rem">.14</span></div>
+        <span class="mock__chip">▲ 4.10% AER · +£8,472 this month</span>
+        <div class="mock__spark">
+          <span style="height:38%"></span><span style="height:52%"></span><span style="height:44%"></span><span style="height:66%"></span>
+          <span style="height:58%"></span><span style="height:78%"></span><span style="height:70%"></span><span style="height:92%"></span>
+          <span style="height:84%"></span><span style="height:100%"></span>
+        </div>
+        <div class="mock__rows">
+          <div class="mock__row"><span class="ic">↑</span><span><span class="nm">Payroll · July</span><br><span class="sub">GBP · 214 recipients</span></span><span class="amt">−£186,400</span></div>
+          <div class="mock__row"><span class="ic">↓</span><span><span class="nm">Stripe payout</span><br><span class="sub">USD → GBP</span></span><span class="amt pos">+£92,140</span></div>
+          <div class="mock__row"><span class="ic">↓</span><span><span class="nm">Interest accrued</span><br><span class="sub">Reserve account</span></span><span class="amt pos">+£8,472</span></div>
+        </div>
+        <div class="mock__float"><span class="tick">✓</span><span>Payment sent<br><b>£186,400</b></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="calc section" id="calc">
+    <div class="wrap">
+      <div class="section__head center reveal">
+        <span class="eyebrow">Treasury calculator</span>
+        <h2 class="display section__title">What could your idle cash earn?</h2>
+        <p>Most business accounts pay nothing. Worthwhile Reserve pays up to 4.10% AER, with same-day access.</p>
+      </div>
+      <div class="calc__wrap reveal">
+        <div class="calc__panel">
+          <div class="calc__field">
+            <label>Cash on deposit <b data-calc-balance>£500,000</b></label>
+            <input class="calc__range" type="range" id="calcBalance" min="10000" max="5000000" step="10000" value="500000" />
+          </div>
+          <div class="calc__field">
+            <label>Term <b data-calc-term>12 months</b></label>
+            <input class="calc__range" type="range" id="calcTerm" min="1" max="36" step="1" value="12" />
+          </div>
+          <div class="calc__field" style="margin-bottom:0">
+            <label>Rate <b>4.10% AER</b></label>
+          </div>
+        </div>
+        <div>
+          <div class="calc__result">
+            <div class="l">Projected interest</div>
+            <div class="v"><span class="accent">£</span><span data-calc-earn>20,500</span></div>
+            <div class="sub" data-calc-sub>on £500,000 over 12 months</div>
+          </div>
+          <p class="calc__note">Illustrative only. 4.10% AER is a placeholder rate; interest is calculated on a simple annualised basis for demonstration and is not a financial promotion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="secure">
+    <div class="section wrap" id="security">
+      <div class="section__head center reveal">
+        <span class="eyebrow" style="color:var(--brass)">Trust &amp; Security</span>
+        <h2 class="display section__title" style="color:#fff">Bank-grade security, by design</h2>
+        <p style="color:#93a0b4">Your money and data are protected by the same standards used by the institutions of Canary Wharf.</p>
+      </div>
+      <div class="secure__grid reveal">
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/></svg><h4>FCA-authorised</h4><p>Regulated as an authorised payment institution.</p></div>
+        <div class="badge"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><h4>256-bit encryption</h4><p>Data encrypted in transit and at rest, end to end.</p></div>
+        <div class="badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg><h4>PCI DSS Level 1</h4><p>The highest tier of payment-card security compliance.</p></div>
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M4 10l8-6 8 6v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 20v-6h6v6"/></svg><h4>Funds safeguarded</h4><p>Client funds held separately at tier-1 banks.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
   <section class="section wrap">
     <div class="section__head center reveal">
-      <span class="eyebrow">Shop by Category</span>
-      <h2 class="display section__title">The Wardrobe</h2>
+      <span class="eyebrow">Getting started</span>
+      <h2 class="display section__title">Live in a single afternoon</h2>
     </div>
-    <div class="cats reveal">
-      <a class="cat" href="collection.html"><div class="ph" data-label="Tailoring"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80" alt="Tailoring" loading="lazy"></div><div class="cat__label"><span class="t">Tailoring</span><span class="arrow">→</span></div></a>
-      <a class="cat" href="collection.html"><div class="ph" data-label="Knitwear"><img src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=700&q=80" alt="Knitwear" loading="lazy"></div><div class="cat__label"><span class="t">Knitwear</span><span class="arrow">→</span></div></a>
-      <a class="cat" href="collection.html"><div class="ph" data-label="Eveningwear"><img src="https://images.unsplash.com/photo-1518049362265-d5b2a6467637?auto=format&fit=crop&w=700&q=80" alt="Eveningwear" loading="lazy"></div><div class="cat__label"><span class="t">Eveningwear</span><span class="arrow">→</span></div></a>
-      <a class="cat" href="collection.html"><div class="ph" data-label="Accessories"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80" alt="Accessories" loading="lazy"></div><div class="cat__label"><span class="t">Accessories</span><span class="arrow">→</span></div></a>
+    <div class="steps reveal">
+      <div class="step"><h3>Apply online</h3><p>Open your account in about ten minutes — no branch visits, no paperwork in the post.</p></div>
+      <div class="step"><h3>Get verified</h3><p>Our team completes KYB checks quickly, with a dedicated onboarding manager for larger accounts.</p></div>
+      <div class="step"><h3>Move money</h3><p>Fund your account, invite your team and start paying, collecting and earning — worldwide.</p></div>
     </div>
   </section>
 
-  <!-- ============ PRESS ============ -->
+  <!-- TESTIMONIALS -->
   <section class="press">
     <div class="section wrap">
       <div class="press__grid">
-        <blockquote class="press__quote reveal">“Quietly one of the most considered wardrobes in London.”<span class="press__by">The Editorial</span></blockquote>
-        <blockquote class="press__quote reveal" data-reveal-delay="1">“Tailoring with a whisper, not a shout.”<span class="press__by">Mode Journal</span></blockquote>
-        <blockquote class="press__quote reveal" data-reveal-delay="2">“The cashmere alone is worth the pilgrimage.”<span class="press__by">Atelier Review</span></blockquote>
-        <blockquote class="press__quote reveal" data-reveal-delay="3">“Understated luxury, impeccably made.”<span class="press__by">The Sartorial</span></blockquote>
+        <blockquote class="press__quote reveal">“We replaced three banking providers with Worthwhile in a fortnight.”<span class="press__by">CFO · Meridian</span></blockquote>
+        <blockquote class="press__quote reveal" data-reveal-delay="1">“Interbank FX alone saved us six figures last year.”<span class="press__by">Finance Director · Northwind</span></blockquote>
+        <blockquote class="press__quote reveal" data-reveal-delay="2">“The treasury yield is the best we've found for same-day liquidity.”<span class="press__by">Treasurer · Halcyon</span></blockquote>
+        <blockquote class="press__quote reveal" data-reveal-delay="3">“The API let us embed accounts in days, not quarters.”<span class="press__by">CTO · Kestrel</span></blockquote>
       </div>
     </div>
   </section>
 
-  <!-- ============ INSTAGRAM ============ -->
-  <section class="section wrap">
-    <div class="section__head center reveal">
-      <span class="eyebrow">@eclatlondon</span>
-      <h2 class="display section__title">Follow the House</h2>
+  <!-- BIG CTA -->
+  <section class="cta" id="open">
+    <div class="skyline" aria-hidden="true">
+      <svg viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice">
+        <g fill="#0f1a30">
+          <rect x="120" y="200" width="80" height="200"/><rect x="220" y="150" width="90" height="250"/><rect x="330" y="230" width="60" height="170"/>
+          <rect x="520" y="120" width="90" height="280"/><rect x="640" y="80" width="110" height="320"/><polygon points="640,80 695,40 750,80"/>
+          <rect x="770" y="150" width="80" height="250"/><rect x="960" y="130" width="90" height="270"/><rect x="1080" y="200" width="70" height="200"/><rect x="1170" y="160" width="90" height="240"/>
+        </g>
+        <g fill="#f0c274" opacity=".7"><rect x="666" y="106" width="8" height="8"/><rect x="690" y="106" width="8" height="8"/><rect x="714" y="106" width="8" height="8"/><rect x="690" y="150" width="8" height="8"/><rect x="666" y="200" width="8" height="8"/></g>
+      </svg>
     </div>
-    <div class="insta reveal">
-      <a class="insta__cell" href="#"><div class="ph" data-label="Éclat"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=500&q=80" alt="Instagram" loading="lazy"></div></a>
-      <a class="insta__cell" href="#"><div class="ph" data-label="Éclat"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=80" alt="Instagram" loading="lazy"></div></a>
-      <a class="insta__cell" href="#"><div class="ph" data-label="Éclat"><img src="https://images.unsplash.com/photo-1495385794356-15371f348c31?auto=format&fit=crop&w=500&q=80" alt="Instagram" loading="lazy"></div></a>
-      <a class="insta__cell" href="#"><div class="ph" data-label="Éclat"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=80" alt="Instagram" loading="lazy"></div></a>
-      <a class="insta__cell" href="#"><div class="ph" data-label="Éclat"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=500&q=80" alt="Instagram" loading="lazy"></div></a>
-      <a class="insta__cell" href="#"><div class="ph" data-label="Éclat"><img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?auto=format&fit=crop&w=500&q=80" alt="Instagram" loading="lazy"></div></a>
+    <div class="cta__scrim"></div>
+    <div class="cta__inner wrap reveal">
+      <span class="eyebrow" style="color:var(--brass)">Open an account</span>
+      <h2 class="display section__title" style="color:#fff;margin-top:1rem">Banking that's worth your while</h2>
+      <p>Join 12,000+ businesses moving money smarter. Apply in minutes — a specialist will be in touch the same day.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="#open" class="btn btn--accent">Open an account</a>
+        <a href="company.html" class="btn btn--light">Talk to sales</a>
+      </div>
     </div>
   </section>
 
-  <!-- ============ NEWSLETTER ============ -->
+  <!-- NEWSLETTER -->
   <section class="news section">
     <div class="wrap reveal">
-      <span class="eyebrow">The Inner Circle</span>
-      <h2 class="display section__title" style="margin-top:1rem">Join the Maison</h2>
-      <p style="max-width:46ch;margin:1rem auto 0;color:var(--stone)">Early access to collections, atelier invitations and a private view of the archive.</p>
+      <span class="eyebrow">The Worthwhile Brief</span>
+      <h2 class="display section__title" style="margin-top:1rem">Markets, money &amp; treasury</h2>
+      <p style="max-width:46ch;margin:1rem auto 0;color:var(--stone)">A concise monthly note on rates, FX and cash strategy for finance leaders.</p>
       <form class="news__form" novalidate>
-        <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required />
+        <input type="email" name="email" placeholder="Your work email" aria-label="Email address" required />
         <button type="submit">Subscribe</button>
       </form>
       <div class="news__msg" role="status" aria-live="polite"></div>
-      <p class="news__note">By subscribing you agree to our Privacy Policy. Unsubscribe anytime.</p>
+      <p class="news__note">No spam. Unsubscribe anytime. See our Privacy Policy.</p>
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer__top">
         <div class="footer__brand">
-          <a class="brand" href="index.html">Éclat<small>London</small></a>
-          <p>A British maison of quiet-luxury ready-to-wear. Designed in London, crafted in the ateliers of Europe.</p>
+          <a class="brand" href="index.html">Worthwhile<small>Fintech</small></a>
+          <p>Modern financial infrastructure for ambitious businesses. Designed and engineered in Canary Wharf, London.</p>
           <div class="socials">
-            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
-            <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 20c-.5-1.5.2-3.5.6-5 .2-.8.8-3.2.8-3.2s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.6 2.2-.9 3.4-.2 1 .5 1.8 1.5 1.8 1.8 0 3-2.3 3-5 0-2-1.4-3.6-4-3.6-2.9 0-4.7 2.2-4.7 4.6 0 .8.3 1.5.6 1.8"/></svg></a>
-            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M15 4c.3 2 1.8 3.5 3.8 3.7v2.5c-1.4 0-2.7-.4-3.8-1.1v5.7A5.2 5.2 0 1 1 9.8 9.6v2.6a2.6 2.6 0 1 0 2.6 2.6V4H15z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></svg></a>
+            <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+            <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3a3 3 0 0 0-1-2c3 0 5-2 5-5a4 4 0 0 0-1-3 4 4 0 0 0 0-3s-1 0-3 1a11 11 0 0 0-6 0C6 2 5 2 5 2a4 4 0 0 0 0 3 4 4 0 0 0-1 3c0 3 2 5 5 5a3 3 0 0 0-1 2v3"/></svg></a>
           </div>
         </div>
-        <div class="footer__col">
-          <h4>Shop</h4>
-          <a href="collection.html">New In</a>
-          <a href="collection.html">Ready-to-Wear</a>
-          <a href="collection.html">Knitwear</a>
-          <a href="collection.html">Eveningwear</a>
-          <a href="collection.html">Accessories</a>
-        </div>
-        <div class="footer__col">
-          <h4>The Maison</h4>
-          <a href="about.html">Our Story</a>
-          <a href="about.html">Sustainability</a>
-          <a href="about.html">The Atelier</a>
-          <a href="#">Careers</a>
-          <a href="#">Press</a>
-        </div>
-        <div class="footer__col">
-          <h4>Client Care</h4>
-          <a href="#">Contact</a>
-          <a href="#">Shipping &amp; Returns</a>
-          <a href="#">Size Guide</a>
-          <a href="#">Book an Appointment</a>
-          <a href="#">FAQ</a>
-        </div>
+        <div class="footer__col"><h4>Product</h4><a href="platform.html">Accounts</a><a href="platform.html">Payments</a><a href="platform.html">Cards</a><a href="platform.html">Treasury</a><a href="platform.html#pricing">Pricing</a></div>
+        <div class="footer__col"><h4>Company</h4><a href="company.html">About</a><a href="company.html#security">Security</a><a href="company.html">Careers</a><a href="company.html">Press</a><a href="company.html">Contact</a></div>
+        <div class="footer__col"><h4>Resources</h4><a href="#">Developer docs</a><a href="#">Help centre</a><a href="#">Status</a><a href="#">The Worthwhile Brief</a></div>
       </div>
       <div class="footer__bottom">
-        <p>© 2026 Éclat London. All rights reserved.</p>
-        <div class="pay"><span>Visa</span><span>Amex</span><span>Mastercard</span><span>Apple Pay</span><span>Klarna</span></div>
+        <p>© 2026 Worthwhile Fintech Ltd. All rights reserved.</p>
+        <div class="pay"><span>Visa</span><span>Mastercard</span><span>SWIFT</span><span>Faster Payments</span><span>SEPA</span></div>
       </div>
+      <p style="font-size:.66rem;color:#6b7583;margin-top:1.4rem;max-width:80ch;line-height:1.7">Worthwhile is a demonstration brand created for this project; it is not a real financial institution and nothing on this site constitutes a financial promotion, advice, or an offer of regulated services. Replace this notice and all figures with your own before going live.</p>
     </div>
   </footer>
 
-  <!-- ============ CART DRAWER ============ -->
-  <aside class="drawer" aria-label="Shopping bag">
-    <div class="drawer__head">
-      <h3>Your Bag</h3>
-      <button class="drawer__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
-    </div>
-    <div class="drawer__body" data-lenis-prevent></div>
-    <div class="drawer__foot">
-      <div class="drawer__sub"><span class="l">Subtotal</span><span class="v" data-subtotal>£0</span></div>
-      <p class="drawer__tax">Shipping &amp; taxes calculated at checkout.</p>
-      <button class="btn btn--solid" data-checkout>Proceed to checkout</button>
-    </div>
-  </aside>
-
-  <!-- ============ MOBILE MENU ============ -->
+  <!-- MOBILE MENU -->
   <div class="mobile-menu">
-    <div class="mobile-menu__head">
-      <a class="brand" href="index.html">Éclat<small>London</small></a>
-      <button class="mobile-menu__close" aria-label="Close"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="1.3"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
-    </div>
+    <div class="mobile-menu__head"><a class="brand" href="index.html">Worthwhile<small>Fintech</small></a><button class="mobile-menu__close" aria-label="Close"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="1.3"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button></div>
     <nav class="mobile-menu__links">
-      <a href="collection.html">New In</a>
-      <a href="collection.html">Ready-to-Wear</a>
-      <a href="collection.html">The Edit</a>
-      <a href="about.html">Atelier</a>
+      <a href="platform.html">Platform</a>
+      <a href="platform.html#pricing">Pricing</a>
+      <a href="company.html#security">Security</a>
+      <a href="company.html">Company</a>
     </nav>
-    <div class="mobile-menu__foot">
-      <a href="about.html">Account</a>
-      <a href="#">Contact</a>
-      <a href="#">Book Appointment</a>
-    </div>
+    <div class="mobile-menu__foot"><a href="company.html">Log in</a><a href="#open">Open account</a></div>
   </div>
 
-  <!-- ============ OVERLAY + TO TOP ============ -->
   <div class="overlay"></div>
   <button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24"><polyline points="6 14 12 8 18 14"/></svg></button>
 
