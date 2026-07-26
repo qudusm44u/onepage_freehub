@@ -222,16 +222,47 @@
   }
 
   /* ---------------------------------------------------------------
-     9. Newsletter (client-side validation only)
+     9. Forms — newsletter + "open account" lead capture
+     -------------------------------------------------------------------
+     To collect real submissions, create a free form at https://formspree.io
+     (or Tally), then paste your endpoint below, e.g.
+       const FORM_ENDPOINT = "https://formspree.io/f/abcdwxyz";
+     Until you do, the forms run in friendly demo mode.
      --------------------------------------------------------------- */
-  $(".news__form")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const input = $(".news__form input");
-    const msg = $(".news__msg");
-    const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(input.value.trim());
-    if (msg) msg.textContent = ok ? "Merci — welcome to the maison." : "Please enter a valid email address.";
-    if (ok) input.value = "";
-  });
+  const FORM_ENDPOINT = "https://formspree.io/f/XXXXXXXX"; // ← replace XXXXXXXX with your Formspree form ID
+  const FORM_LIVE = !/XXXXXXXX/.test(FORM_ENDPOINT);
+  const emailOk = (v) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test((v || "").trim());
+
+  function wireForm(form, msgEl, successText) {
+    if (!form) return;
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = form.querySelector('input[type="email"]');
+      if (email && !emailOk(email.value)) { if (msgEl) msgEl.textContent = "Please enter a valid email address."; return; }
+      if (!FORM_LIVE) {
+        if (msgEl) msgEl.textContent = "Demo mode — add your form ID (see README) to collect this.";
+        form.reset(); return;
+      }
+      if (msgEl) msgEl.textContent = "Sending…";
+      try {
+        const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(form) });
+        if (msgEl) msgEl.textContent = res.ok ? successText : "Something went wrong — please try again.";
+        if (res.ok) form.reset();
+      } catch (_) {
+        if (msgEl) msgEl.textContent = "Network error — please try again.";
+      }
+    });
+  }
+  wireForm($(".news__form"), $(".news__msg"), "Thank you — you're subscribed.");
+  wireForm($("[data-lead]"), $("[data-lead-msg]"), "Thank you — we'll be in touch shortly.");
+
+  /* Theme toggle (light / dark) */
+  const root = document.documentElement;
+  $$(".theme-toggle").forEach((btn) => btn.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("ww.theme", next); } catch (_) {}
+  }));
 
   /* ---------------------------------------------------------------
      10. Toast helper

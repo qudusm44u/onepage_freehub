@@ -27,10 +27,9 @@ No attribution required, free for commercial use:
 Other equally-free sources: **Pexels** (pexels.com) and **Pixabay** (pixabay.com)
 — same "free for commercial use, no attribution" terms.
 
-> Why not baked-in already? This project's build sandbox blocks image CDNs, so a
-> specific Unsplash CDN URL couldn't be verified here. The placeholder `src` in
-> `index.html` points at an Unsplash London aerial; swap it for your chosen shot
-> above. Real visitors on Cloudflare are not affected by the sandbox limitation.
+> The site ships with **no external images** — every hero uses the built-in SVG
+> skyline, so there is nothing to hotlink and nothing that can break. Adding a
+> real photo is entirely optional.
 
 ## Fonts — Google Fonts
 - **Cormorant Garamond** (display serif) + **Jost** (UI sans).
