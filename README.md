@@ -78,13 +78,13 @@ just paste its endpoint on the same line.)
 
 ## Imagery
 
-Property photos are hotlinked from **Unsplash** (free, commercial use, no
-attribution). Each photo sits over a navy fallback panel, and the hero also has
-the built-in SVG skyline, so nothing ever looks broken if an image doesn't load.
-For production, download the photos into an `assets/` folder and self-host them
-(faster, no third-party dependency, and Cloudflare can optimise them). Swap any
-image by editing its `src` in the HTML. See `MEDIA.md` for sources and the
-Canary Wharf photo links.
+Property photos are **AI-generated** (Higgsfield) and currently **hotlinked**
+from Higgsfield's CDN. Each photo sits over a navy fallback panel, and the hero
+also has the built-in SVG skyline, so nothing ever looks broken if an image
+doesn't load. For production robustness, **download them from your Higgsfield
+gallery and self-host** them in an `assets/` folder (GitHub → Upload files),
+then point each `src` at `assets/…` and tighten the CSP `img-src` back to
+`'self'`. See `MEDIA.md` for full details and licensing notes.
 
 ## Limitations — read this
 
@@ -95,7 +95,8 @@ Canary Wharf photo links.
   the 8.5% growth figure are invented. The footer carries a disclaimer; replace
   everything before any public/commercial use, and don't present the credentials
   (RICS, etc.) or returns as real until they genuinely apply.
-- **Property photos are hotlinked from Unsplash** until you self-host them.
+- **Property photos are AI-generated and hotlinked from Higgsfield's CDN**
+  until you self-host them (recommended for permanence — see `MEDIA.md`).
 - **Forms are demo-only until you connect Formspree** (see above).
 - A leftover `mortgage.html` from the original project remains in the repo,
   unlinked. Delete it if you don't want it deployed.
