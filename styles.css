@@ -816,12 +816,43 @@ body, .site-header, .feature, .plan, .calc__panel, .news, .calc, .marquee, .to-t
    ============  PROPERTY & INVESTMENT — additions  ====================
    ===================================================================== */
 
-/* Cinematic Ken Burns drift on the hero photo (the "moving picture") */
-.hero__photo { animation: kenburns 26s var(--ease) infinite alternate; transform-origin: 60% 40%; }
+/* Hero as a crossfading slideshow — images flow into each other */
+.hero__photo { opacity: 0; transition: opacity 1.8s var(--ease); transform-origin: 60% 40%; }
+.hero__photo.is-active { opacity: 1; animation: kenburns 13s var(--ease) infinite alternate; }
 @keyframes kenburns {
   from { transform: scale(1.06) translate3d(0,0,0); }
   to   { transform: scale(1.2) translate3d(-2.5%, -2%, 0); }
 }
+
+/* Tap-to-view lightbox with crossfade */
+.lightbox {
+  position: fixed; inset: 0; z-index: 120; display: flex; align-items: center; justify-content: center;
+  background: rgba(6,9,14,.94); backdrop-filter: blur(6px);
+  opacity: 0; visibility: hidden; transition: opacity .45s var(--ease), visibility .45s;
+}
+.lightbox.is-open { opacity: 1; visibility: visible; }
+.lightbox__img {
+  max-width: 92vw; max-height: 86vh; object-fit: contain; border-radius: 4px;
+  box-shadow: 0 40px 120px rgba(0,0,0,.6); opacity: 0; transition: opacity .5s var(--ease);
+}
+.lightbox__cap {
+  position: absolute; bottom: 26px; left: 0; right: 0; text-align: center;
+  font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.7);
+}
+.lightbox__close, .lightbox__nav {
+  position: absolute; z-index: 2; width: 52px; height: 52px; border-radius: 999px;
+  display: flex; align-items: center; justify-content: center; color: #fff;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+  transition: background .3s var(--ease); cursor: pointer;
+}
+.lightbox__close:hover, .lightbox__nav:hover { background: rgba(255,255,255,.2); }
+.lightbox__close { top: 22px; right: 22px; }
+.lightbox__nav svg, .lightbox__close svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+.lightbox__prev { left: max(18px, 3vw); top: 50%; transform: translateY(-50%); }
+.lightbox__next { right: max(18px, 3vw); top: 50%; transform: translateY(-50%); }
+/* make gallery items feel tappable */
+a.card[data-lightbox], a.look[data-lightbox] { cursor: zoom-in; }
+@media (max-width: 560px) { .lightbox__prev { left: 10px; } .lightbox__next { right: 10px; } .lightbox__nav, .lightbox__close { width: 44px; height: 44px; } }
 
 /* Residence cards become links; refined meta for property */
 a.card { display: block; color: inherit; }

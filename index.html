@@ -85,8 +85,13 @@
         <g fill="#f0c274" opacity=".14"><rect x="712" y="360" width="4" height="34"/><rect x="410" y="360" width="3" height="30"/><rect x="1010" y="360" width="3" height="26"/></g>
       </svg>
     </div>
-    <!-- Drone view of Canary Wharf — cinematic Ken Burns drift; skyline shows if it fails -->
-    <img class="hero__photo" src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_220511_473319b3-9d35-4710-a495-64954e415c50.png" data-photo alt="Aerial drone view of Canary Wharf, London" fetchpriority="high" />
+    <!-- Cinematic hero slideshow — images crossfade into each other; skyline shows if they fail -->
+    <div class="hero__slides" aria-hidden="true">
+      <img class="hero__photo is-active" src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_220511_473319b3-9d35-4710-a495-64954e415c50.png" data-photo alt="Aerial view of Canary Wharf, London at dusk" fetchpriority="high" />
+      <img class="hero__photo" src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221649_b92006b2-5bbf-46bd-a709-1ad254365969_min.webp" data-photo alt="Riverside development at dusk" loading="lazy" />
+      <img class="hero__photo" src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221608_792a5bc3-3a4a-4bbc-9d4d-6a161c0922f2_min.webp" data-photo alt="City skyline duplex interior" loading="lazy" />
+      <img class="hero__photo" src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221050_5c261c9f-7062-47f0-9321-d88b102fdaa6_min.webp" data-photo alt="Riverside penthouse interior" loading="lazy" />
+    </div>
     <div class="hero__scrim"></div>
     <div class="wrap hero__inner reveal">
       <span class="hero__badge"><span class="dot"></span> Prime London property &amp; investment</span>
@@ -124,25 +129,25 @@
       <p>A selection of current and recently delivered residences across prime London.</p>
     </div>
     <div class="products">
-      <a class="card reveal" href="investment.html">
+      <a class="card reveal" href="investment.html" data-lightbox>
         <div class="card__media"><div class="ph" data-label="Riverside Penthouse"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221050_5c261c9f-7062-47f0-9321-d88b102fdaa6_min.webp" alt="Riverside Penthouse interior" loading="lazy"></div><span class="card__tag">New release</span></div>
         <h3 class="card__name">Riverside Penthouse</h3>
         <div class="card__meta"><span class="card__price">from £4.2m</span><span class="card__loc">Canary Wharf · 3 bed</span></div>
         <span class="card__view">View residence</span>
       </a>
-      <a class="card reveal" data-reveal-delay="1" href="investment.html">
+      <a class="card reveal" data-reveal-delay="1" href="investment.html" data-lightbox>
         <div class="card__media"><div class="ph" data-label="The Wharf Tower"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221442_16952536-5a87-482d-acdb-a12b3db0401f_min.webp" alt="The Wharf Tower" loading="lazy"></div><span class="card__tag">Investment</span></div>
         <h3 class="card__name">The Wharf Tower</h3>
         <div class="card__meta"><span class="card__price">from £1.1m</span><span class="card__loc">Canary Wharf · 1–2 bed</span></div>
         <span class="card__view">View residence</span>
       </a>
-      <a class="card reveal" data-reveal-delay="2" href="investment.html">
+      <a class="card reveal" data-reveal-delay="2" href="investment.html" data-lightbox>
         <div class="card__media"><div class="ph" data-label="Mayfair Residence"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221508_e6f10127-b7f8-41d9-9eae-ef58f950d42c_min.webp" alt="Mayfair Residence interior" loading="lazy"></div></div>
         <h3 class="card__name">Mayfair Residence</h3>
         <div class="card__meta"><span class="card__price">from £8.9m</span><span class="card__loc">Mayfair · 4 bed</span></div>
         <span class="card__view">View residence</span>
       </a>
-      <a class="card reveal" data-reveal-delay="3" href="investment.html">
+      <a class="card reveal" data-reveal-delay="3" href="investment.html" data-lightbox>
         <div class="card__media"><div class="ph" data-label="Knightsbridge Duplex"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221536_08d4604c-7b06-4d70-b18a-28f8688ac731_min.webp" alt="Knightsbridge Duplex interior" loading="lazy"></div><span class="card__tag">Off-market</span></div>
         <h3 class="card__name">Knightsbridge Duplex</h3>
         <div class="card__meta"><span class="card__price">POA</span><span class="card__loc">Knightsbridge · 5 bed</span></div>
@@ -203,12 +208,12 @@
       <p>A glimpse of residences and developments delivered across prime London.</p>
     </div>
     <div class="lookbook reveal">
-      <a class="look a" href="investment.html"><div class="ph" data-label="Riverside" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221050_5c261c9f-7062-47f0-9321-d88b102fdaa6_min.webp" alt="Residence" loading="lazy"></div><div class="look__cap"><div class="t">Riverside Penthouse</div><div class="s">Canary Wharf</div></div></a>
-      <a class="look b" href="investment.html"><div class="ph" data-label="Mayfair" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221508_e6f10127-b7f8-41d9-9eae-ef58f950d42c_min.webp" alt="Residence" loading="lazy"></div><div class="look__cap"><div class="t">Mayfair Residence</div><div class="s">Mayfair</div></div></a>
-      <a class="look c" href="investment.html"><div class="ph" data-label="The City" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221608_792a5bc3-3a4a-4bbc-9d4d-6a161c0922f2_min.webp" alt="Residence" loading="lazy"></div><div class="look__cap"><div class="t">Skyline Duplex</div><div class="s">The City</div></div></a>
-      <a class="look d" href="investment.html"><div class="ph" data-label="Interiors" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221536_08d4604c-7b06-4d70-b18a-28f8688ac731_min.webp" alt="Interior" loading="lazy"></div><div class="look__cap"><div class="t">The Studio</div><div class="s">Interior Design</div></div></a>
-      <a class="look e" href="investment.html"><div class="ph" data-label="Knightsbridge" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221536_08d4604c-7b06-4d70-b18a-28f8688ac731_min.webp" alt="Residence" loading="lazy"></div><div class="look__cap"><div class="t">Garden Duplex</div><div class="s">Knightsbridge</div></div></a>
-      <a class="look f" href="investment.html"><div class="ph" data-label="Canary Wharf" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_220511_473319b3-9d35-4710-a495-64954e415c50_min.webp" alt="Canary Wharf" loading="lazy"></div><div class="look__cap"><div class="t">The Wharf Collection</div><div class="s">Canary Wharf</div></div></a>
+      <a class="look a" href="investment.html" data-lightbox><div class="ph" data-label="Riverside" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221050_5c261c9f-7062-47f0-9321-d88b102fdaa6_min.webp" alt="Residence" loading="lazy"></div><div class="look__cap"><div class="t">Riverside Penthouse</div><div class="s">Canary Wharf</div></div></a>
+      <a class="look b" href="investment.html" data-lightbox><div class="ph" data-label="Mayfair" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221508_e6f10127-b7f8-41d9-9eae-ef58f950d42c_min.webp" alt="Residence" loading="lazy"></div><div class="look__cap"><div class="t">Mayfair Residence</div><div class="s">Mayfair</div></div></a>
+      <a class="look c" href="investment.html" data-lightbox><div class="ph" data-label="The City" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221608_792a5bc3-3a4a-4bbc-9d4d-6a161c0922f2_min.webp" alt="Residence" loading="lazy"></div><div class="look__cap"><div class="t">Skyline Duplex</div><div class="s">The City</div></div></a>
+      <a class="look d" href="investment.html" data-lightbox><div class="ph" data-label="Interiors" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221536_08d4604c-7b06-4d70-b18a-28f8688ac731_min.webp" alt="Interior" loading="lazy"></div><div class="look__cap"><div class="t">The Studio</div><div class="s">Interior Design</div></div></a>
+      <a class="look e" href="investment.html" data-lightbox><div class="ph" data-label="Knightsbridge" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221536_08d4604c-7b06-4d70-b18a-28f8688ac731_min.webp" alt="Residence" loading="lazy"></div><div class="look__cap"><div class="t">Garden Duplex</div><div class="s">Knightsbridge</div></div></a>
+      <a class="look f" href="investment.html" data-lightbox><div class="ph" data-label="Canary Wharf" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_220511_473319b3-9d35-4710-a495-64954e415c50_min.webp" alt="Canary Wharf" loading="lazy"></div><div class="look__cap"><div class="t">The Wharf Collection</div><div class="s">Canary Wharf</div></div></a>
     </div>
   </section>
 
@@ -350,6 +355,14 @@
     <div class="mobile-menu__foot"><a href="about.html">Contact</a><a href="#enquire">Enquire</a></div>
   </div>
 
+  <!-- Tap-to-view lightbox -->
+  <div class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lightbox__close" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+    <button class="lightbox__nav lightbox__prev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg></button>
+    <img class="lightbox__img" alt="" />
+    <button class="lightbox__nav lightbox__next" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+    <div class="lightbox__cap"></div>
+  </div>
   <div class="overlay"></div>
   <button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24"><polyline points="6 14 12 8 18 14"/></svg></button>
 

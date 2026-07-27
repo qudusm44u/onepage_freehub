@@ -26,12 +26,57 @@
     else img.addEventListener("load", () => {});
   });
 
-  // Hero aerial photo: if it fails to load, reveal the self-contained skyline behind it
-  const heroPhoto = $(".hero__photo");
-  if (heroPhoto) {
-    const hide = () => { heroPhoto.style.display = "none"; };
-    heroPhoto.addEventListener("error", hide);
-    if (heroPhoto.complete && heroPhoto.naturalWidth === 0) hide();
+  // Hero slideshow: images crossfade into each other; a failed one hides so the skyline shows
+  const heroSlides = $$(".hero__photo");
+  heroSlides.forEach((img) => {
+    const hide = () => { img.style.display = "none"; };
+    img.addEventListener("error", hide);
+    if (img.complete && img.naturalWidth === 0) hide();
+  });
+  if (heroSlides.length > 1 && !REDUCE) {
+    let hi = 0;
+    setInterval(() => {
+      heroSlides[hi].classList.remove("is-active");
+      hi = (hi + 1) % heroSlides.length;
+      heroSlides[hi].classList.add("is-active");
+    }, 5200);
+  }
+
+  /* ---------------------------------------------------------------
+     1b. Lightbox — tap any gallery image to view it full-screen,
+         crossfading between them
+     --------------------------------------------------------------- */
+  const galItems = $$("[data-lightbox]");
+  const lb = $(".lightbox");
+  if (galItems.length && lb) {
+    const lbImg = $(".lightbox__img"), lbCap = $(".lightbox__cap");
+    const items = galItems.map((el) => ({
+      src: el.querySelector("img")?.getAttribute("src") || "",
+      cap: (el.querySelector(".card__name") || el.querySelector(".look__cap .t"))?.textContent || "",
+    }));
+    let li = 0;
+    const show = () => {
+      const it = items[li];
+      lbImg.style.opacity = 0;
+      const pre = new Image();
+      const set = () => { lbImg.src = it.src; lbImg.alt = it.cap; requestAnimationFrame(() => { lbImg.style.opacity = 1; }); };
+      pre.onload = set; pre.onerror = set; pre.src = it.src;
+      if (lbCap) lbCap.textContent = it.cap ? `${it.cap}  ·  ${li + 1} / ${items.length}` : `${li + 1} / ${items.length}`;
+    };
+    const openLb  = (i) => { li = i; show(); lb.classList.add("is-open"); lb.setAttribute("aria-hidden", "false"); lockScroll(); };
+    const closeLb = () => { lb.classList.remove("is-open"); lb.setAttribute("aria-hidden", "true"); unlockScroll(); };
+    const step = (d) => { li = (li + d + items.length) % items.length; show(); };
+    galItems.forEach((el, i) => el.addEventListener("click", (e) => { e.preventDefault(); openLb(i); }));
+    $(".lightbox__close")?.addEventListener("click", closeLb);
+    $(".lightbox__prev")?.addEventListener("click", () => step(-1));
+    $(".lightbox__next")?.addEventListener("click", () => step(1));
+    lb.addEventListener("click", (e) => { if (e.target === lb) closeLb(); });
+    document.addEventListener("keydown", (e) => {
+      if (!lb.classList.contains("is-open")) return;
+      if (e.key === "Escape") closeLb();
+      else if (e.key === "ArrowLeft") step(-1);
+      else if (e.key === "ArrowRight") step(1);
+    });
   }
 
   /* ---------------------------------------------------------------

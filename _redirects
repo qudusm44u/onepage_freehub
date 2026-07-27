@@ -1,10 +1,11 @@
 # Cloudflare Pages — redirects
-/home         /                  301
-/portfolio    /#portfolio        301
-/investment   /investment.html   301
-/platform     /investment.html   301
-/locations    /#locations        301
-/about        /about.html        301
-/company      /about.html        301
-/contact      /about.html#contact 301
-/enquire      /#enquire          301
+# NOTE: do NOT redirect a clean path (/investment) to its .html file —
+# Pages already serves .html at the clean path and 308-redirects the .html
+# form back to it, so a clean->.html rule causes an infinite loop.
+/home         /              301
+/platform     /investment    301
+/company      /about         301
+/portfolio    /#portfolio    301
+/locations    /#locations    301
+/enquire      /#enquire      301
+/contact      /about#contact 301
