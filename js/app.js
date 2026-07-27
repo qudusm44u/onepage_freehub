@@ -310,20 +310,21 @@
      --------------------------------------------------------------- */
   const calcBal = $("#calcBalance"), calcTerm = $("#calcTerm");
   if (calcBal && calcTerm) {
-    const RATE = 0.041; // 4.10% AER (placeholder)
+    const RATE = 0.085; // 8.5% target annual growth (placeholder)
     const balOut  = $("[data-calc-balance]");
     const termOut = $("[data-calc-term]");
-    const earnOut = $("[data-calc-earn]");
+    const earnOut = $("[data-calc-earn]");   // projected value
     const subOut  = $("[data-calc-sub]");
     const gbp = (n) => Math.round(n).toLocaleString("en-GB");
-    const months = (m) => m + (m === 1 ? " month" : " months");
+    const years = (y) => y + (y === 1 ? " year" : " years");
     const runCalc = () => {
       const bal = +calcBal.value, term = +calcTerm.value;
-      const interest = bal * RATE * (term / 12);
+      const value = bal * Math.pow(1 + RATE, term);   // compound growth
+      const gain = value - bal;
       if (balOut)  balOut.textContent  = "£" + gbp(bal);
-      if (termOut) termOut.textContent = months(term);
-      if (earnOut) earnOut.textContent = gbp(interest);
-      if (subOut)  subOut.textContent  = `on £${gbp(bal)} over ${months(term)}`;
+      if (termOut) termOut.textContent = years(term);
+      if (earnOut) earnOut.textContent = gbp(value);
+      if (subOut)  subOut.textContent  = `a gain of £${gbp(gain)} over ${years(term)}`;
     };
     calcBal.addEventListener("input", runCalc);
     calcTerm.addEventListener("input", runCalc);

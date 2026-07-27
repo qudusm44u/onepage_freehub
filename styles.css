@@ -811,3 +811,34 @@ body, .site-header, .feature, .plan, .calc__panel, .news, .calc, .marquee, .to-t
 .lead-form input:focus { outline: none; border-color: var(--brass); background: rgba(255,255,255,.12); }
 .lead-form button { white-space: nowrap; }
 .form-msg { min-height: 1.2em; margin-top: 1rem; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: #7fe3bf; }
+
+/* =====================================================================
+   ============  PROPERTY & INVESTMENT — additions  ====================
+   ===================================================================== */
+
+/* Cinematic Ken Burns drift on the hero photo (the "moving picture") */
+.hero__photo { animation: kenburns 26s var(--ease) infinite alternate; transform-origin: 60% 40%; }
+@keyframes kenburns {
+  from { transform: scale(1.06) translate3d(0,0,0); }
+  to   { transform: scale(1.2) translate3d(-2.5%, -2%, 0); }
+}
+
+/* Residence cards become links; refined meta for property */
+a.card { display: block; color: inherit; }
+.card__meta .card__loc { color: var(--stone); font-size: .8rem; letter-spacing: .04em; }
+.card__view { display:inline-block; margin-top:.7rem; font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; color:var(--brass-dk); }
+.card__view::after { content:" →"; }
+.card__media { --g1:#2a3550; --g2:#0f1826; }
+
+/* Section intro statement (understated, Candy-London-style) */
+.statement { max-width: 40rem; margin-inline: auto; text-align: center; }
+.statement p { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.3rem); line-height: 1.45; color: var(--ink); }
+
+/* Portfolio grid caption tweak (reuses .lookbook/.look) */
+.look__cap .s { color: var(--brass); }
+
+/* Locations tiles caption */
+.cat__label .sub { display:block; font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; opacity:.8; margin-top:3px; }
+
+/* Reduced-motion: freeze Ken Burns */
+@media (prefers-reduced-motion: reduce) { .hero__photo { animation: none !important; } }

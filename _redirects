@@ -1,9 +1,10 @@
 # Cloudflare Pages — redirects
-# https://developers.cloudflare.com/pages/configuration/redirects/
-/home        /                 301
-/platform    /platform.html    301
-/pricing     /platform.html    301
-/company     /company.html     301
-/about       /company.html     301
-/security    /company.html     301
-/login       /company.html     302
+/home         /                  301
+/portfolio    /#portfolio        301
+/investment   /investment.html   301
+/platform     /investment.html   301
+/locations    /#locations        301
+/about        /about.html        301
+/company      /about.html        301
+/contact      /about.html#contact 301
+/enquire      /#enquire          301

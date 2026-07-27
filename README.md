@@ -1,22 +1,23 @@
-# Worthwhile — fintech marketing site
+# Worthwhile — prime London property & investment site
 
-A premium, quiet-luxury marketing site for **Worthwhile**, a (fictional) modern
-financial platform headquartered in Canary Wharf, London. Pure static
-front-end — HTML, CSS and vanilla JavaScript, **no build step, no framework,
-no dependencies** — designed to be hosted on **Cloudflare Pages**.
+A premium, quiet-luxury marketing site for **Worthwhile**, a (fictional) prime
+London property & investment house in Canary Wharf. Cinematic, image-led, in the
+spirit of high-end property brands. Pure static front-end — HTML, CSS and vanilla
+JavaScript, **no build step, no framework, no dependencies** — designed to be
+hosted on **Cloudflare Pages**.
 
 > "Worthwhile" is a fictional, original brand created for this project. It is
-> not a real financial institution. Rename it and replace all figures/claims
-> with your own before going live.
+> not a real company. Rename it and replace all figures, credentials, imagery
+> and claims with your own before going live.
 
 ## What's inside
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Landing — Canary Wharf hero, FX ticker, trust bar, animated stats, feature grid, product dashboard mock, **live treasury calculator**, security, steps, testimonials, CTA |
-| `platform.html` | Platform capabilities + calculator + **pricing plans** |
-| `company.html` | About, values, **security & compliance**, careers |
-| `styles.css` | Complete design system + fintech components |
+| `index.html` | Landing — Canary Wharf drone hero, featured residences, stats, services, featured development, portfolio grid, **investment calculator**, locations, assurances, testimonials, enquiry form |
+| `investment.html` | Investment approach + calculator + **ways to invest** |
+| `about.html` | About, values, **track record & assurances**, contact |
+| `styles.css` | Complete design system + property components |
 | `js/app.js` | All interactivity (below) |
 | `js/theme.js` | Tiny early script that applies the saved dark/light theme with no flash |
 | `js/lenis.min.js` | Self-hosted smooth-scroll library (vendored, CSP-safe) |
@@ -26,13 +27,13 @@ no dependencies** — designed to be hosted on **Cloudflare Pages**.
 
 ## Interactive / "stand-out" pieces
 
-- **Self-contained Canary Wharf skyline** — a hand-built SVG/CSS dusk skyline (One Canada Square + towers, lit windows, water reflection) used on every hero. It renders instantly, is 100% copyright-free, and needs **zero network** — there are no external images anywhere on the site.
+- **Cinematic Canary Wharf drone hero** — a real aerial photo with a slow **Ken Burns** drift; behind it sits a hand-built **SVG/CSS Canary Wharf skyline** (One Canada Square + towers, lit windows) that shows instantly and is the fallback if any photo fails, so the hero is never broken.
+- **Moving pictures throughout** — hover-zoom on residence and portfolio images, parallax on the featured development, clip-path "uncover" reveals, momentum smooth-scroll (Lenis).
 - **Dark / light mode** — a toggle in the nav, remembered per visitor (and it follows the visitor's system preference on first visit).
-- **Working sign-up forms** — the "Open account" and newsletter forms submit real leads once you connect a form service (see "Turn on the forms" below).
-- **Animated stat counters** that count up when scrolled into view (£4.2B, 180+, 99.99%, 12,000+).
-- **Product dashboard mock** — a fake Worthwhile treasury UI (balance, sparkline, transactions, a floating "payment sent" chip) built purely in HTML/CSS.
-- **Live treasury calculator** — drag the balance/term sliders, watch the projected interest recalculate instantly.
-- **Momentum smooth-scroll (Lenis)** + parallax, an **FX ticker**, scroll reveals, rotating announcement bar, mobile menu and back-to-top.
+- **Working enquiry + newsletter forms** — submit real leads once you connect a form service (see "Turn on the forms" below).
+- **Animated stat counters** (£2.4bn, 1,200+, 8.5%, 14) that count up when scrolled into view.
+- **Live investment calculator** — drag the amount/holding-period sliders, watch the projected value compound instantly.
+- Scroll reveals, rotating announcement bar, credentials marquee, mobile menu and back-to-top.
 - Fully respects `prefers-reduced-motion` and degrades gracefully with JS off.
 
 ## Deploy to Cloudflare Pages
@@ -57,8 +58,9 @@ self-host images, **Polish/Image Resizing**.
 
 ## Turn on the forms (≈ 5 minutes, no coding)
 
-The "Open account" and newsletter forms currently run in **demo mode** (they
-show a message but don't send anywhere). To receive real submissions by email:
+The enquiry ("Request a consultation") and newsletter forms currently run in
+**demo mode** (they show a message but don't send anywhere). To receive real
+submissions by email:
 
 1. Go to **https://formspree.io** and sign up (free plan is fine).
 2. Create a new form. It gives you an endpoint like
@@ -68,28 +70,32 @@ show a message but don't send anywhere). To receive real submissions by email:
    const FORM_ENDPOINT = "https://formspree.io/f/XXXXXXXX";
    ```
    Replace `XXXXXXXX` with your form's ID (keep the quotes). Save.
-4. Deploy again. Done — every "Open account" and newsletter submission now
-   lands in your inbox.
+4. Deploy again. Done — every enquiry and newsletter submission now lands in
+   your inbox.
 
 (Prefer **Tally** or another tool? Any service that accepts a form POST works —
 just paste its endpoint on the same line.)
 
-## Want a real Canary Wharf photo instead of the skyline?
+## Imagery
 
-The skyline is permanent and needs nothing. If you'd rather use a real aerial
-later, save a free photo into an `assets/` folder and set an `<img>` as the hero
-background — free, no-attribution Canary Wharf photos are listed in `MEDIA.md`.
+Property photos are hotlinked from **Unsplash** (free, commercial use, no
+attribution). Each photo sits over a navy fallback panel, and the hero also has
+the built-in SVG skyline, so nothing ever looks broken if an image doesn't load.
+For production, download the photos into an `assets/` folder and self-host them
+(faster, no third-party dependency, and Cloudflare can optimise them). Swap any
+image by editing its `src` in the HTML. See `MEDIA.md` for sources and the
+Canary Wharf photo links.
 
 ## Limitations — read this
 
-- **This is a marketing front-end, not a bank.** There's no real onboarding,
-  KYC, ledger, or payments engine. "Open account", "Log in" and the sliders are
-  demonstrations. A real product needs a backend (your own, or a BaaS provider)
-  and regulatory authorisation.
-- **All content is placeholder** — brand, copy, stats, rates, testimonials and
-  the 4.10% AER figure are invented. The footer carries a disclaimer to that
-  effect; replace everything before any public/commercial use. Do not present
-  fictional regulatory claims (FCA, PCI DSS, etc.) as real.
+- **This is a marketing front-end, not a real estate agency.** There's no CRM,
+  listings database, viewings scheduler or payments — the enquiry form and
+  sliders are demonstrations. Wire the form to your inbox (above) or a CRM.
+- **All content is placeholder** — brand, copy, prices, stats, testimonials and
+  the 8.5% growth figure are invented. The footer carries a disclaimer; replace
+  everything before any public/commercial use, and don't present the credentials
+  (RICS, etc.) or returns as real until they genuinely apply.
+- **Property photos are hotlinked from Unsplash** until you self-host them.
 - **Forms are demo-only until you connect Formspree** (see above).
 - A leftover `mortgage.html` from the original project remains in the repo,
   unlinked. Delete it if you don't want it deployed.
