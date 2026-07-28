@@ -17,6 +17,23 @@
   const unlockScroll = () => { lenis ? lenis.start() : (document.body.style.overflow = ""); };
 
   /* ---------------------------------------------------------------
+     0. Intro loader — branded first-load reveal (once per session)
+     --------------------------------------------------------------- */
+  const loader = $("[data-loader]");
+  if (loader) {
+    const finish = () => { loader.classList.add("is-done"); setTimeout(() => loader.remove(), 1100); };
+    let seen = false;
+    try { seen = !!sessionStorage.getItem("ww.intro"); } catch (_) {}
+    if (seen || REDUCE) {
+      loader.remove();
+    } else {
+      try { sessionStorage.setItem("ww.intro", "1"); } catch (_) {}
+      document.documentElement.style.overflow = "hidden";
+      setTimeout(() => { document.documentElement.style.overflow = ""; finish(); }, 1750);
+    }
+  }
+
+  /* ---------------------------------------------------------------
      1. Image fallback — mark art-directed placeholders that failed
      --------------------------------------------------------------- */
   $$(".ph img").forEach((img) => {
@@ -49,17 +66,18 @@
   const showcase = $("[data-showcase]");
   if (showcase) {
     const CATS = [
-      { eyebrow: "01 / Stocks",         title: "Invest in the world's markets.", sub: "Global equities, ETFs and indices — researched, diversified, and traded at institutional cost." },
-      { eyebrow: "02 / Bonds",          title: "Income you can count on.",       sub: "Government and corporate bonds, structured for steady, dependable yield." },
-      { eyebrow: "03 / Company Shares", title: "Own a stake in tomorrow.",       sub: "Direct equity in public and private companies — from blue-chips to pre-IPO." },
-      { eyebrow: "04 / Forex",          title: "Trade at the mid-market.",        sub: "Currency exchange and hedging at interbank rates across 30+ pairs." },
-      { eyebrow: "05 / Property",       title: "Bricks that build wealth.",       sub: "Prime London property and development — landmark residences and investment." },
+      { eyebrow: "01 / Stocks",         title: "Invest in the world's markets.", sub: "Global equities, ETFs and indices — researched, diversified, and traded at institutional cost.", info: ["FTSE 100 · S&P 500 · NASDAQ", "Institutional dealing", "+9.4% 10yr avg*"] },
+      { eyebrow: "02 / Bonds",          title: "Income you can count on.",       sub: "Government and corporate bonds, structured for steady, dependable yield.", info: ["UK Gilts", "Corporate & EM", "4.2% avg yield*"] },
+      { eyebrow: "03 / Company Shares", title: "Own a stake in tomorrow.",       sub: "Direct equity in public and private companies — from blue-chips to pre-IPO.", info: ["Public & private", "Pre-IPO access", "Founder secondaries"] },
+      { eyebrow: "04 / Forex",          title: "Trade at the mid-market.",        sub: "Currency exchange and hedging at interbank rates across 30+ pairs.", info: ["30+ pairs", "Interbank rates", "Forward hedging"] },
+      { eyebrow: "05 / Property",       title: "Bricks that build wealth.",       sub: "Prime London property and development — landmark residences and investment.", info: ["Prime central London", "Canary Wharf", "£2.4bn delivered"] },
     ];
     const scenes = $$(".show__scene", showcase);
     const tabs   = $$(".show__menu button", showcase);
     const eyeEl  = $("[data-show-eyebrow]", showcase);
     const titleEl= $("[data-show-title]", showcase);
     const subEl  = $("[data-show-sub]", showcase);
+    const infoEl = $("[data-show-info]", showcase);
     const prog   = $(".show__progress", showcase);
     const DUR = 6500;
     let idx = -1, timer = null, cT = null, token = 0;
@@ -72,6 +90,11 @@
       const c = CATS[idx];
       if (eyeEl) eyeEl.textContent = c.eyebrow;
       if (cT) cT();
+      // key info for this section fades out, then in
+      if (infoEl) {
+        infoEl.classList.remove("in");
+        setTimeout(() => { if (my === token) { infoEl.innerHTML = c.info.map((t) => `<span>${t}</span>`).join(""); infoEl.classList.add("in"); } }, 500);
+      }
       if (REDUCE) { titleEl.textContent = c.title; subEl.textContent = c.sub; }
       else {
         subEl.textContent = "";

@@ -22,6 +22,14 @@
 </head>
 <body>
 
+  <!-- Intro loader -->
+  <div class="loader" data-loader aria-hidden="true">
+    <div>
+      <div class="loader__brand">Worthwhile<small>Fintech</small></div>
+      <div class="loader__bar"><i></i></div>
+    </div>
+  </div>
+
   <!-- ANNOUNCEMENT -->
   <div class="announce" aria-label="Announcements">
     <div class="announce__track">
@@ -49,54 +57,8 @@
     </div>
   </header>
 
-  <!-- HERO — mixed montage background + typed category words -->
-  <section class="hero" data-hero>
-    <div class="hero__montage play" aria-hidden="true">
-      <svg viewBox="0 0 1440 760" preserveAspectRatio="xMidYMax slice">
-        <g class="sv-grid"><line x1="0" y1="200" x2="1440" y2="200"/><line x1="0" y1="360" x2="1440" y2="360"/><line x1="0" y1="520" x2="1440" y2="520"/></g>
-        <path class="montage-curve" fill="none" stroke="#c9a45e" stroke-width="2" opacity=".4" d="M0,300 C360,290 520,200 820,190 S1240,120 1440,95"/>
-        <g stroke="#33445f" stroke-width="2" opacity=".7"><line x1="150" y1="442" x2="150" y2="562"/><line x1="280" y1="422" x2="280" y2="532"/><line x1="410" y1="452" x2="410" y2="572"/><line x1="540" y1="402" x2="540" y2="532"/><line x1="670" y1="422" x2="670" y2="537"/><line x1="800" y1="382" x2="800" y2="512"/><line x1="930" y1="402" x2="930" y2="517"/><line x1="1060" y1="352" x2="1060" y2="487"/><line x1="1190" y1="332" x2="1190" y2="462"/><line x1="1320" y1="362" x2="1320" y2="482"/></g>
-        <rect class="montage-candle" x="139" y="470" width="22" height="70" fill="#0e9f6e" style="animation-delay:0.00s"/><rect class="montage-candle" x="269" y="450" width="22" height="60" fill="#0e9f6e" style="animation-delay:0.35s"/><rect class="montage-candle" x="399" y="480" width="22" height="70" fill="#c0455a" style="animation-delay:0.70s"/><rect class="montage-candle" x="529" y="430" width="22" height="80" fill="#0e9f6e" style="animation-delay:1.05s"/><rect class="montage-candle" x="659" y="450" width="22" height="65" fill="#c0455a" style="animation-delay:1.40s"/><rect class="montage-candle" x="789" y="410" width="22" height="80" fill="#0e9f6e" style="animation-delay:1.75s"/><rect class="montage-candle" x="919" y="430" width="22" height="65" fill="#c0455a" style="animation-delay:2.10s"/><rect class="montage-candle" x="1049" y="380" width="22" height="85" fill="#0e9f6e" style="animation-delay:2.45s"/><rect class="montage-candle" x="1179" y="360" width="22" height="80" fill="#0e9f6e" style="animation-delay:2.80s"/><rect class="montage-candle" x="1309" y="390" width="22" height="70" fill="#0e9f6e" style="animation-delay:3.15s"/>
-        <polyline class="montage-line" fill="none" stroke="#0e9f6e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="150,470 280,450 410,480 540,430 670,450 800,410 930,430 1060,380 1190,360 1320,390"/>
-        <g class="float-a" opacity=".55"><circle cx="230" cy="180" r="38" fill="rgba(14,159,110,.10)" stroke="#0e9f6e" stroke-width="1.2"/><text x="230" y="193" text-anchor="middle" fill="#dfe8f2" font-family="Cormorant Garamond,serif" font-size="32">$</text></g>
-        <g class="float-b" opacity=".5"><circle cx="1180" cy="200" r="36" fill="rgba(201,164,94,.10)" stroke="#c9a45e" stroke-width="1.2"/><text x="1180" y="213" text-anchor="middle" fill="#dfe8f2" font-family="Cormorant Garamond,serif" font-size="30">&#163;</text></g>
-        <g class="float-a" opacity=".4"><circle cx="1330" cy="330" r="30" fill="rgba(255,255,255,.04)" stroke="#6f86ad" stroke-width="1.2"/><text x="1330" y="341" text-anchor="middle" fill="#dfe8f2" font-family="Cormorant Garamond,serif" font-size="26">&#8364;</text></g>
-        <g fill="#0d1728"><rect x="60" y="560" width="90" height="200"/><rect x="170" y="520" width="100" height="240"/><rect x="290" y="580" width="70" height="180"/><rect x="470" y="500" width="96" height="260"/><rect x="600" y="470" width="120" height="290"/><rect x="730" y="540" width="90" height="220"/><rect x="850" y="580" width="80" height="180"/><rect x="970" y="510" width="100" height="250"/><rect x="1090" y="560" width="90" height="200"/><rect x="1180" y="520" width="100" height="240"/><rect x="1300" y="540" width="110" height="220"/><polygon points="600,470 660,430 720,470"/></g>
-        <g fill="#f0c274"><rect class="twinkle" x="72" y="578" width="6" height="6" style="animation-delay:0.45s"/><rect class="twinkle" x="72" y="646" width="6" height="6" style="animation-delay:1.61s"/><rect class="twinkle" x="72" y="680" width="6" height="6" style="animation-delay:0.17s"/><rect class="twinkle" x="94" y="578" width="6" height="6" style="animation-delay:1.30s"/><rect class="twinkle" x="94" y="612" width="6" height="6" style="animation-delay:0.27s"/><rect class="twinkle" x="94" y="646" width="6" height="6" style="animation-delay:2.48s"/><rect class="twinkle" x="94" y="680" width="6" height="6" style="animation-delay:0.67s"/><rect class="twinkle" x="116" y="646" width="6" height="6" style="animation-delay:2.93s"/><rect class="twinkle" x="116" y="680" width="6" height="6" style="animation-delay:2.58s"/><rect class="twinkle" x="116" y="714" width="6" height="6" style="animation-delay:0.43s"/><rect class="twinkle" x="138" y="578" width="6" height="6" style="animation-delay:0.93s"/><rect class="twinkle" x="138" y="646" width="6" height="6" style="animation-delay:1.74s"/><rect class="twinkle" x="138" y="714" width="6" height="6" style="animation-delay:1.64s"/><rect class="twinkle" x="182" y="538" width="6" height="6" style="animation-delay:0.18s"/><rect class="twinkle" x="182" y="572" width="6" height="6" style="animation-delay:2.04s"/><rect class="twinkle" x="182" y="606" width="6" height="6" style="animation-delay:0.94s"/><rect class="twinkle" x="182" y="674" width="6" height="6" style="animation-delay:0.90s"/><rect class="twinkle" x="204" y="572" width="6" height="6" style="animation-delay:1.72s"/><rect class="twinkle" x="204" y="708" width="6" height="6" style="animation-delay:2.94s"/><rect class="twinkle" x="226" y="538" width="6" height="6" style="animation-delay:1.25s"/><rect class="twinkle" x="226" y="606" width="6" height="6" style="animation-delay:1.47s"/><rect class="twinkle" x="226" y="640" width="6" height="6" style="animation-delay:2.00s"/><rect class="twinkle" x="248" y="572" width="6" height="6" style="animation-delay:2.09s"/><rect class="twinkle" x="248" y="674" width="6" height="6" style="animation-delay:2.52s"/><rect class="twinkle" x="302" y="598" width="6" height="6" style="animation-delay:1.99s"/><rect class="twinkle" x="302" y="632" width="6" height="6" style="animation-delay:2.10s"/><rect class="twinkle" x="324" y="598" width="6" height="6" style="animation-delay:1.16s"/><rect class="twinkle" x="324" y="666" width="6" height="6" style="animation-delay:1.39s"/><rect class="twinkle" x="324" y="700" width="6" height="6" style="animation-delay:0.35s"/><rect class="twinkle" x="324" y="734" width="6" height="6" style="animation-delay:2.30s"/><rect class="twinkle" x="346" y="598" width="6" height="6" style="animation-delay:0.74s"/><rect class="twinkle" x="346" y="632" width="6" height="6" style="animation-delay:2.61s"/><rect class="twinkle" x="346" y="666" width="6" height="6" style="animation-delay:1.35s"/><rect class="twinkle" x="482" y="586" width="6" height="6" style="animation-delay:1.25s"/><rect class="twinkle" x="482" y="620" width="6" height="6" style="animation-delay:2.65s"/><rect class="twinkle" x="482" y="688" width="6" height="6" style="animation-delay:0.53s"/><rect class="twinkle" x="482" y="722" width="6" height="6" style="animation-delay:0.70s"/><rect class="twinkle" x="504" y="518" width="6" height="6" style="animation-delay:1.77s"/><rect class="twinkle" x="504" y="552" width="6" height="6" style="animation-delay:0.01s"/><rect class="twinkle" x="504" y="586" width="6" height="6" style="animation-delay:1.11s"/><rect class="twinkle" x="526" y="586" width="6" height="6" style="animation-delay:2.70s"/><rect class="twinkle" x="526" y="722" width="6" height="6" style="animation-delay:1.20s"/><rect class="twinkle" x="548" y="518" width="6" height="6" style="animation-delay:1.90s"/><rect class="twinkle" x="548" y="552" width="6" height="6" style="animation-delay:0.20s"/><rect class="twinkle" x="548" y="586" width="6" height="6" style="animation-delay:0.49s"/><rect class="twinkle" x="548" y="620" width="6" height="6" style="animation-delay:0.16s"/><rect class="twinkle" x="548" y="654" width="6" height="6" style="animation-delay:0.45s"/><rect class="twinkle" x="548" y="688" width="6" height="6" style="animation-delay:1.09s"/><rect class="twinkle" x="548" y="722" width="6" height="6" style="animation-delay:2.62s"/><rect class="twinkle" x="612" y="522" width="6" height="6" style="animation-delay:0.76s"/><rect class="twinkle" x="612" y="556" width="6" height="6" style="animation-delay:1.09s"/><rect class="twinkle" x="612" y="590" width="6" height="6" style="animation-delay:2.55s"/><rect class="twinkle" x="612" y="658" width="6" height="6" style="animation-delay:1.45s"/><rect class="twinkle" x="612" y="692" width="6" height="6" style="animation-delay:0.31s"/><rect class="twinkle" x="612" y="726" width="6" height="6" style="animation-delay:0.79s"/><rect class="twinkle" x="634" y="522" width="6" height="6" style="animation-delay:0.07s"/><rect class="twinkle" x="634" y="624" width="6" height="6" style="animation-delay:1.63s"/><rect class="twinkle" x="634" y="658" width="6" height="6" style="animation-delay:1.58s"/><rect class="twinkle" x="656" y="522" width="6" height="6" style="animation-delay:1.10s"/><rect class="twinkle" x="656" y="556" width="6" height="6" style="animation-delay:2.32s"/><rect class="twinkle" x="656" y="658" width="6" height="6" style="animation-delay:0.67s"/><rect class="twinkle" x="678" y="624" width="6" height="6" style="animation-delay:1.55s"/><rect class="twinkle" x="678" y="658" width="6" height="6" style="animation-delay:0.09s"/><rect class="twinkle" x="678" y="692" width="6" height="6" style="animation-delay:0.84s"/><rect class="twinkle" x="678" y="726" width="6" height="6" style="animation-delay:2.08s"/><rect class="twinkle" x="700" y="522" width="6" height="6" style="animation-delay:2.81s"/><rect class="twinkle" x="700" y="624" width="6" height="6" style="animation-delay:0.66s"/><rect class="twinkle" x="700" y="658" width="6" height="6" style="animation-delay:0.59s"/><rect class="twinkle" x="700" y="692" width="6" height="6" style="animation-delay:1.87s"/><rect class="twinkle" x="742" y="592" width="6" height="6" style="animation-delay:1.96s"/><rect class="twinkle" x="742" y="660" width="6" height="6" style="animation-delay:1.98s"/><rect class="twinkle" x="764" y="592" width="6" height="6" style="animation-delay:0.54s"/><rect class="twinkle" x="764" y="660" width="6" height="6" style="animation-delay:2.40s"/><rect class="twinkle" x="764" y="728" width="6" height="6" style="animation-delay:1.20s"/><rect class="twinkle" x="786" y="626" width="6" height="6" style="animation-delay:0.38s"/><rect class="twinkle" x="786" y="660" width="6" height="6" style="animation-delay:2.71s"/><rect class="twinkle" x="786" y="728" width="6" height="6" style="animation-delay:2.48s"/><rect class="twinkle" x="808" y="626" width="6" height="6" style="animation-delay:1.65s"/><rect class="twinkle" x="808" y="660" width="6" height="6" style="animation-delay:0.04s"/><rect class="twinkle" x="862" y="666" width="6" height="6" style="animation-delay:2.62s"/><rect class="twinkle" x="862" y="734" width="6" height="6" style="animation-delay:0.76s"/><rect class="twinkle" x="884" y="598" width="6" height="6" style="animation-delay:0.72s"/><rect class="twinkle" x="884" y="666" width="6" height="6" style="animation-delay:1.26s"/><rect class="twinkle" x="884" y="700" width="6" height="6" style="animation-delay:2.73s"/><rect class="twinkle" x="884" y="734" width="6" height="6" style="animation-delay:1.37s"/><rect class="twinkle" x="906" y="666" width="6" height="6" style="animation-delay:2.75s"/><rect class="twinkle" x="982" y="562" width="6" height="6" style="animation-delay:1.32s"/><rect class="twinkle" x="982" y="596" width="6" height="6" style="animation-delay:0.01s"/><rect class="twinkle" x="982" y="664" width="6" height="6" style="animation-delay:1.42s"/><rect class="twinkle" x="1004" y="528" width="6" height="6" style="animation-delay:1.56s"/><rect class="twinkle" x="1004" y="630" width="6" height="6" style="animation-delay:1.68s"/><rect class="twinkle" x="1004" y="664" width="6" height="6" style="animation-delay:0.83s"/><rect class="twinkle" x="1026" y="630" width="6" height="6" style="animation-delay:1.84s"/><rect class="twinkle" x="1048" y="528" width="6" height="6" style="animation-delay:1.60s"/><rect class="twinkle" x="1048" y="562" width="6" height="6" style="animation-delay:2.82s"/><rect class="twinkle" x="1048" y="698" width="6" height="6" style="animation-delay:1.68s"/><rect class="twinkle" x="1102" y="612" width="6" height="6" style="animation-delay:0.36s"/><rect class="twinkle" x="1102" y="646" width="6" height="6" style="animation-delay:0.22s"/><rect class="twinkle" x="1102" y="680" width="6" height="6" style="animation-delay:0.22s"/><rect class="twinkle" x="1124" y="646" width="6" height="6" style="animation-delay:2.15s"/><rect class="twinkle" x="1124" y="714" width="6" height="6" style="animation-delay:2.65s"/><rect class="twinkle" x="1146" y="612" width="6" height="6" style="animation-delay:2.86s"/><rect class="twinkle" x="1146" y="646" width="6" height="6" style="animation-delay:1.46s"/><rect class="twinkle" x="1168" y="578" width="6" height="6" style="animation-delay:1.29s"/><rect class="twinkle" x="1168" y="646" width="6" height="6" style="animation-delay:0.59s"/><rect class="twinkle" x="1168" y="680" width="6" height="6" style="animation-delay:2.17s"/><rect class="twinkle" x="1168" y="714" width="6" height="6" style="animation-delay:1.66s"/><rect class="twinkle" x="1192" y="538" width="6" height="6" style="animation-delay:0.05s"/><rect class="twinkle" x="1192" y="572" width="6" height="6" style="animation-delay:1.87s"/><rect class="twinkle" x="1192" y="640" width="6" height="6" style="animation-delay:2.96s"/><rect class="twinkle" x="1214" y="538" width="6" height="6" style="animation-delay:0.80s"/><rect class="twinkle" x="1214" y="572" width="6" height="6" style="animation-delay:2.34s"/><rect class="twinkle" x="1214" y="606" width="6" height="6" style="animation-delay:0.39s"/><rect class="twinkle" x="1214" y="640" width="6" height="6" style="animation-delay:2.73s"/><rect class="twinkle" x="1214" y="708" width="6" height="6" style="animation-delay:0.45s"/><rect class="twinkle" x="1236" y="640" width="6" height="6" style="animation-delay:0.17s"/><rect class="twinkle" x="1236" y="708" width="6" height="6" style="animation-delay:0.22s"/><rect class="twinkle" x="1258" y="640" width="6" height="6" style="animation-delay:2.57s"/><rect class="twinkle" x="1258" y="674" width="6" height="6" style="animation-delay:2.59s"/><rect class="twinkle" x="1258" y="708" width="6" height="6" style="animation-delay:1.02s"/><rect class="twinkle" x="1312" y="626" width="6" height="6" style="animation-delay:0.39s"/><rect class="twinkle" x="1312" y="694" width="6" height="6" style="animation-delay:0.33s"/><rect class="twinkle" x="1312" y="728" width="6" height="6" style="animation-delay:0.15s"/><rect class="twinkle" x="1334" y="558" width="6" height="6" style="animation-delay:0.94s"/><rect class="twinkle" x="1334" y="592" width="6" height="6" style="animation-delay:2.28s"/><rect class="twinkle" x="1334" y="626" width="6" height="6" style="animation-delay:1.50s"/><rect class="twinkle" x="1334" y="660" width="6" height="6" style="animation-delay:1.04s"/><rect class="twinkle" x="1334" y="694" width="6" height="6" style="animation-delay:0.75s"/><rect class="twinkle" x="1334" y="728" width="6" height="6" style="animation-delay:2.20s"/><rect class="twinkle" x="1356" y="592" width="6" height="6" style="animation-delay:1.42s"/><rect class="twinkle" x="1356" y="660" width="6" height="6" style="animation-delay:2.46s"/><rect class="twinkle" x="1356" y="694" width="6" height="6" style="animation-delay:1.49s"/><rect class="twinkle" x="1378" y="558" width="6" height="6" style="animation-delay:1.52s"/><rect class="twinkle" x="1378" y="660" width="6" height="6" style="animation-delay:2.50s"/><rect class="twinkle" x="1400" y="558" width="6" height="6" style="animation-delay:1.04s"/><rect class="twinkle" x="1400" y="592" width="6" height="6" style="animation-delay:0.39s"/><rect class="twinkle" x="1400" y="626" width="6" height="6" style="animation-delay:2.22s"/><rect class="twinkle" x="1400" y="660" width="6" height="6" style="animation-delay:0.49s"/><rect class="twinkle" x="1400" y="694" width="6" height="6" style="animation-delay:2.52s"/></g>
-      </svg>
-    </div>
-    <div class="hero__scrim"></div>
-    <div class="wrap hero__inner reveal">
-      <span class="eyebrow" style="color:var(--brass)">Multi-asset investment &middot; Worth your while</span>
-      <h1 class="display hero__title">Wealth, built on<br><span class="accent" data-hero-type style="color:var(--brass)">stocks</span>.</h1>
-      <p class="hero__sub">One firm across every major asset class &mdash; stocks, bonds, company shares, forex and property, advised and managed under one roof.</p>
-      <div class="hero__ctas">
-        <a href="#categories" class="btn btn--accent">Explore what we do</a>
-        <a href="#enquire" class="btn btn--light">Speak to an adviser</a>
-      </div>
-      <p class="hero__trust"><b>FCA-authorised</b> &nbsp;&middot;&nbsp; Est. 2009 &nbsp;&middot;&nbsp; &pound;2.4bn under advice</p>
-    </div>
-    <div class="scroll-cue"><span></span>Scroll</div>
-  </section>
-
-
-  <!-- CREDENTIALS MARQUEE -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>Stocks · Bonds · Shares · Forex · Property</span><span>FCA-Authorised</span><span>£2.4bn Under Advice</span><span>Since 2009</span><span>Global Markets</span>
-      <span>Stocks · Bonds · Shares · Forex · Property</span><span>FCA-Authorised</span><span>£2.4bn Under Advice</span><span>Since 2009</span><span>Global Markets</span>
-    </div>
-  </div>
-
-  <!-- STATEMENT -->
-  <section class="section wrap">
-    <div class="statement reveal">
-      <p>For over fifteen years, Worthwhile has helped private clients and institutions build and protect wealth across every major asset class — stocks, bonds, company shares, currencies and property.</p>
-    </div>
-  </section>
-
   <!-- 5-CATEGORY SHOWCASE (what we do) -->
-  <section class="showcase" data-showcase id="categories">
+  <section class="hero showcase" data-hero data-showcase id="categories">
 
     <!-- SCENE 1 · STOCKS -->
     <div class="show__scene is-active" aria-hidden="true">
@@ -197,6 +159,7 @@
       <span class="eyebrow show__eyebrow" data-show-eyebrow>01 / Stocks</span>
       <h2 class="display hero__title show__title" data-show-title aria-live="polite">&nbsp;</h2>
       <p class="hero__sub show__sub" data-show-sub>&nbsp;</p>
+      <div class="show__info" data-show-info></div>
       <div class="show__ctas">
         <a href="investment.html" class="btn btn--accent">Explore what we do</a>
         <a href="#enquire" class="btn btn--light">Speak to an adviser</a>
@@ -214,7 +177,26 @@
     </div>
 
     <div class="show__progress"><i></i></div>
+    <div class="scroll-cue"><span></span>Scroll</div>
   </section>
+
+
+
+  <!-- CREDENTIALS MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Stocks · Bonds · Shares · Forex · Property</span><span>FCA-Authorised</span><span>£2.4bn Under Advice</span><span>Since 2009</span><span>Global Markets</span>
+      <span>Stocks · Bonds · Shares · Forex · Property</span><span>FCA-Authorised</span><span>£2.4bn Under Advice</span><span>Since 2009</span><span>Global Markets</span>
+    </div>
+  </div>
+
+  <!-- STATEMENT -->
+  <section class="section wrap">
+    <div class="statement reveal">
+      <p>For over fifteen years, Worthwhile has helped private clients and institutions build and protect wealth across every major asset class — stocks, bonds, company shares, currencies and property.</p>
+    </div>
+  </section>
+
 
 
   <!-- STATS -->
@@ -226,6 +208,17 @@
         <div class="stat reveal" data-reveal-delay="2"><div class="stat__num"><span data-count="8.5" data-decimals="1">0</span><span class="accent">%</span></div><div class="stat__label">Avg. annual return*</div></div>
         <div class="stat reveal" data-reveal-delay="3"><div class="stat__num"><span data-count="30" data-suffix="+">0</span></div><div class="stat__label">Global markets</div></div>
       </div>
+    </div>
+  </section>
+
+  <!-- CINEMATIC IMAGE BAND -->
+  <section class="cinema">
+    <div class="cinema__bg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_220511_473319b3-9d35-4710-a495-64954e415c50.png" data-parallax="0.08" alt="Canary Wharf, London at dusk" loading="lazy"></div>
+    <div class="cinema__inner reveal">
+      <span class="eyebrow" style="color:var(--brass)">Anchored in the City</span>
+      <h2 class="display cinema__title" data-type>Wealth, managed from Canary Wharf</h2>
+      <p>From the heart of London's financial district, we advise across every major market — with the discretion and rigour our clients expect.</p>
+      <div class="cinema__rule"></div>
     </div>
   </section>
 

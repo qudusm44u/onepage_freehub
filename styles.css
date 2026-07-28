@@ -1055,3 +1055,65 @@ a.card { display: block; color: inherit; }
   .twinkle, .play.hero__montage svg { animation: none !important; }
   .montage-line, .montage-curve { stroke-dashoffset: 0 !important; }
 }
+
+/* =====================================================================
+   ============  INTRO LOADER + CINEMATIC IMAGE BANDS  =================
+   ===================================================================== */
+
+/* First-load intro loader (brand reveal + curtain lift) */
+.loader {
+  position: fixed; inset: 0; z-index: 200; background: #080b12;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  transition: transform 1s var(--ease), opacity .6s var(--ease);
+  animation: loader-safety 0s linear 3.4s forwards;   /* auto-dismiss if JS never runs */
+}
+.loader.is-done { transform: translateY(-101%); }
+.loader__brand {
+  font-family: var(--serif); font-weight: 500; color: #fff;
+  font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: .28em; text-transform: uppercase;
+  padding-left: .28em; opacity: 0; transform: translateY(8px);
+  animation: loader-in 1s var(--ease) .1s forwards;
+}
+.loader__brand small { display: block; font-size: .3em; letter-spacing: .5em; color: var(--brass); margin-top: 8px; }
+.loader__bar { width: 180px; height: 2px; margin: 1.8rem auto 0; background: rgba(255,255,255,.12); overflow: hidden; }
+.loader__bar i { display: block; height: 100%; width: 0; background: var(--brass); animation: loader-bar 1.5s var(--ease) .1s forwards; }
+@keyframes loader-in  { to { opacity: 1; transform: none; } }
+@keyframes loader-bar { to { width: 100%; } }
+@keyframes loader-safety { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+
+/* Full-bleed cinematic image band (Candy-London style) */
+.cinema {
+  position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; color: #fff; overflow: hidden; background: var(--navy);
+}
+.cinema__bg { position: absolute; inset: -8% 0; z-index: 0; }
+.cinema__bg img { width: 100%; height: 100%; object-fit: cover; }
+.cinema::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to bottom, rgba(6,9,15,.55), rgba(6,9,15,.35) 45%, rgba(6,9,15,.7));
+}
+.cinema__inner { position: relative; z-index: 2; max-width: 48rem; padding-inline: var(--gutter); }
+.cinema__title { font-size: clamp(2.4rem, 5.5vw, 4.6rem); margin: 1rem 0; }
+.cinema__inner p { color: rgba(255,255,255,.86); max-width: 42ch; margin: 0 auto; font-size: 1.05rem; }
+.cinema__rule { width: 60px; height: 1px; background: var(--brass); margin: 1.8rem auto 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .loader__brand, .loader__bar i { animation-duration: .001ms !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* Living scenes — the active category's visuals keep moving (candyldn feel) */
+.show__scene.is-active .draw  { animation: line-stream 5.5s var(--ease) infinite; }
+.show__scene.is-active .bar   { animation: candle-stream 5.5s var(--ease) infinite; }
+.show__scene.is-active .donut { animation: donut-fill 3.4s var(--ease) infinite alternate; }
+.show__scene.is-active .pie   { animation: line-stream 4.5s var(--ease) infinite; }
+.showcase .hero__montage, .show__scene { will-change: opacity; }
+
+/* per-section key info that fades in when that section is active */
+.show__info { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; min-height: 1.2em;
+  opacity: 0; transform: translateY(6px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.show__info.in { opacity: 1; transform: none; }
+.show__info span { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.66);
+  padding-left: 1rem; position: relative; }
+.show__info span::before { content: ""; position: absolute; left: 0; top: 50%; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--brass); transform: translateY(-50%); }
+@media (max-width: 560px) { .show__info { gap: .9rem; } .show__info span { font-size: .58rem; } }
