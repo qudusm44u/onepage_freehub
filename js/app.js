@@ -89,6 +89,23 @@
   }
 
   /* ---------------------------------------------------------------
+     1b2. Hero headline — cycle-type the five asset words
+     --------------------------------------------------------------- */
+  const heroType = $("[data-hero-type]");
+  if (heroType) {
+    const WORDS = ["stocks", "bonds", "company shares", "forex", "property"];
+    let wi = 0, cancelH = null;
+    const cycle = () => {
+      if (cancelH) cancelH();
+      if (REDUCE) heroType.textContent = WORDS[wi];
+      else cancelH = typeInto(heroType, WORDS[wi], 90);
+      wi = (wi + 1) % WORDS.length;
+    };
+    cycle();
+    if (!REDUCE) setInterval(cycle, 2800);
+  }
+
+  /* ---------------------------------------------------------------
      1c. Typewriter for section headings marked [data-type]
      --------------------------------------------------------------- */
   const typeHeads = $$("[data-type]");

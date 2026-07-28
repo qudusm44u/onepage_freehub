@@ -968,3 +968,39 @@ a.card { display: block; color: inherit; }
 .show__scene.is-active .donut-gold { animation: donut-gold 1.9s var(--ease) .2s forwards; }
 @keyframes donut-gold { to { stroke-dashoffset: 620; } }
 @media (prefers-reduced-motion: reduce){ .show__scene .donut{stroke-dashoffset:264!important;animation:none!important} .show__scene .donut-gold{stroke-dashoffset:620!important;animation:none!important} }
+
+/* =====================================================================
+   ============  MIXED-MONTAGE HERO + RELOCATED SHOWCASE  ==============
+   ===================================================================== */
+
+/* The hero background is now a single montage mixing all asset visuals,
+   all animating at once. `.play` fires the draw/grow/fill animations. */
+.hero__montage {
+  position: absolute; inset: 0; z-index: -2; overflow: hidden;
+  background: radial-gradient(120% 90% at 72% 4%, rgba(52,80,140,.30) 0%, transparent 55%),
+              linear-gradient(180deg, #070b14 0%, #0b1224 46%, #14203a 100%);
+}
+.hero__montage svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* generic play-trigger (used by the montage, always on) */
+.play .draw  { animation: draw-line 2.6s var(--ease) forwards; }
+.play .bar   { animation: bar-rise 1s var(--ease) forwards; }
+.play .pie   { animation: draw-line 1.8s var(--ease) forwards; }
+.play .donut { animation: donut-fill 2s var(--ease) forwards; }
+.play .donut-gold { animation: donut-gold 2s var(--ease) .2s forwards; }
+
+/* Relocated showcase becomes an in-page band (not the top hero) */
+.showcase {
+  position: relative; min-height: 92vh; overflow: hidden; color: #fff;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-block: clamp(4rem, 10vh, 8rem) 3rem;
+}
+.showcase .hero__inner { padding-block: 0; }
+.showcase .show__eyebrow { margin-bottom: 1rem; display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+  .play .draw, .play .pie { stroke-dashoffset: 0 !important; animation: none !important; }
+  .play .bar { transform: scaleY(1) !important; animation: none !important; }
+  .play .donut { stroke-dashoffset: 264 !important; animation: none !important; }
+  .play .donut-gold { stroke-dashoffset: 620 !important; animation: none !important; }
+}
