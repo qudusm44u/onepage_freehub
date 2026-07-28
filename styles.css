@@ -1004,3 +1004,54 @@ a.card { display: block; color: inherit; }
   .play .donut { stroke-dashoffset: 264 !important; animation: none !important; }
   .play .donut-gold { stroke-dashoffset: 620 !important; animation: none !important; }
 }
+
+/* =====================================================================
+   ============  CINEMATIC LIVE MONTAGE (continuous motion)  ===========
+   ===================================================================== */
+
+/* candles stream in one after another, on a loop */
+.montage-candle { transform-box: fill-box; transform-origin: bottom; will-change: transform, opacity; }
+.play .montage-candle { animation: candle-stream 7.5s cubic-bezier(.22,1,.36,1) infinite; }
+@keyframes candle-stream {
+  0%   { opacity: 0; transform: scaleY(.10); }
+  8%   { opacity: 1; transform: scaleY(1.05); }
+  12%  { transform: scaleY(1); }
+  88%  { opacity: 1; transform: scaleY(1); }
+  100% { opacity: 0; transform: scaleY(1); }
+}
+/* the emerald trend line redraws itself, glowing, forever */
+.montage-line { stroke-dasharray: 1500; }
+.play .montage-line {
+  animation: line-stream 7.5s cubic-bezier(.22,1,.36,1) infinite;
+  filter: drop-shadow(0 0 9px rgba(14,159,110,.6));
+}
+@keyframes line-stream {
+  0%   { stroke-dashoffset: 1500; opacity: 0; }
+  10%  { opacity: 1; }
+  24%  { stroke-dashoffset: 0; }
+  88%  { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+.montage-curve { stroke-dasharray: 1900; }
+.play .montage-curve { animation: line-stream 10s cubic-bezier(.22,1,.36,1) infinite; }
+/* skyline lights twinkle continuously */
+.twinkle { animation: twk 3.6s ease-in-out infinite; }
+@keyframes twk { 0%,100% { opacity: .18 } 50% { opacity: .95 } }
+/* slow cinematic drift of the whole scene (Ken Burns for depth) */
+.play.hero__montage svg { animation: montage-drift 34s ease-in-out infinite alternate; transform-origin: 55% 60%; }
+@keyframes montage-drift { from { transform: scale(1.02) } to { transform: scale(1.08) translateY(-1.2%) } }
+
+/* cinematic vignette + fine film grain for depth (the "$40k" richness) */
+.hero__montage::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(115% 85% at 50% 34%, transparent 42%, rgba(3,6,12,.62) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .play .montage-candle, .play .montage-line, .play .montage-curve,
+  .twinkle, .play.hero__montage svg { animation: none !important; }
+  .montage-line, .montage-curve { stroke-dashoffset: 0 !important; }
+}
