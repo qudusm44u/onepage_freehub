@@ -25,9 +25,9 @@
   <!-- ANNOUNCEMENT -->
   <div class="announce" aria-label="Announcements">
     <div class="announce__track">
-      <div class="announce__item is-active">Now released — The Wharf Collection, Canary Wharf Riverside</div>
-      <div class="announce__item">Private viewings by appointment · +44 20 7000 0000</div>
-      <div class="announce__item">Off-market investment opportunities available to registered clients</div>
+      <div class="announce__item is-active">Markets move fast — our advisers move faster</div>
+      <div class="announce__item">Speak to an adviser · +44 20 7000 0000</div>
+      <div class="announce__item">Stocks · Bonds · Shares · Forex · Property — one firm, one strategy</div>
     </div>
   </div>
 
@@ -41,7 +41,7 @@
         <a href="#locations">Locations</a>
         <a href="about.html">About</a>
       </nav>
-      <a class="brand" href="index.html">Worthwhile<small>London</small></a>
+      <a class="brand" href="index.html">Worthwhile<small>Fintech</small></a>
       <div class="nav__icons">
         <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme"><svg class="ico-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="ico-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.2 17.2L18.6 18.6M18.6 5.4l-1.4 1.4M5.4 18.6l1.4-1.4"/></svg></button>
         <a class="link-underline nav__login" href="about.html">Contact</a>
@@ -50,74 +50,139 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" data-hero>
-    <div class="skyline" aria-hidden="true">
-      <div class="skyline__stars">
-        <i style="left:12%;top:16%"></i><i style="left:23%;top:26%;animation-delay:1s"></i>
-        <i style="left:37%;top:12%;animation-delay:2s"></i><i style="left:58%;top:20%;animation-delay:.6s"></i>
-        <i style="left:71%;top:14%;animation-delay:1.7s"></i><i style="left:84%;top:24%;animation-delay:2.4s"></i>
-        <i style="left:92%;top:10%;animation-delay:.9s"></i>
-      </div>
-      <svg viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice">
-        <defs>
-          <linearGradient id="bldg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2b46"/><stop offset="1" stop-color="#0a1120"/></linearGradient>
-          <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#18233f"/><stop offset="1" stop-color="#0a0f1c"/></linearGradient>
-        </defs>
-        <g fill="#101a2e" opacity=".75"><rect x="40" y="250" width="60" height="150"/><rect x="150" y="270" width="46" height="130"/><rect x="1080" y="255" width="60" height="145"/><rect x="1300" y="268" width="70" height="132"/><rect x="1180" y="285" width="44" height="115"/></g>
-        <g fill="url(#bldg)">
-          <rect x="90" y="210" width="86" height="190"/><rect x="196" y="170" width="70" height="230"/><rect x="286" y="230" width="60" height="170"/><rect x="360" y="150" width="96" height="250"/><rect x="470" y="200" width="66" height="200"/><rect x="548" y="120" width="86" height="280"/>
-          <rect x="654" y="70" width="118" height="330"/><polygon points="654,70 713,26 772,70"/>
-          <rect x="790" y="140" width="80" height="260"/><rect x="884" y="185" width="70" height="215"/><rect x="966" y="128" width="92" height="272"/><rect x="1074" y="205" width="60" height="195"/><rect x="1146" y="165" width="86" height="235"/><rect x="1244" y="215" width="70" height="185"/><rect x="1326" y="188" width="74" height="212"/>
+  <!-- HERO — 5-category multi-asset showcase -->
+  <section class="hero showcase" data-hero data-showcase>
+
+    <!-- SCENE 1 · STOCKS -->
+    <div class="show__scene is-active" aria-hidden="true">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice">
+        <g class="sv-grid"><line x1="0" y1="160" x2="1440" y2="160"/><line x1="0" y1="300" x2="1440" y2="300"/><line x1="0" y1="440" x2="1440" y2="440"/></g>
+        <g stroke="#33445f" stroke-width="2">
+          <line x1="200" y1="360" x2="200" y2="470"/><line x1="300" y1="330" x2="300" y2="440"/><line x1="400" y1="360" x2="400" y2="470"/><line x1="500" y1="300" x2="500" y2="420"/>
+          <line x1="600" y1="320" x2="600" y2="430"/><line x1="700" y1="260" x2="700" y2="380"/><line x1="800" y1="290" x2="800" y2="400"/><line x1="900" y1="220" x2="900" y2="340"/>
+          <line x1="1000" y1="250" x2="1000" y2="360"/><line x1="1100" y1="180" x2="1100" y2="300"/><line x1="1200" y1="210" x2="1200" y2="320"/>
         </g>
-        <g fill="#f0c274" opacity=".85">
-          <rect x="676" y="96" width="8" height="8"/><rect x="700" y="96" width="8" height="8"/><rect x="724" y="96" width="8" height="8"/><rect x="748" y="96" width="8" height="8"/>
-          <rect x="676" y="128" width="8" height="8" opacity=".5"/><rect x="700" y="128" width="8" height="8"/><rect x="724" y="128" width="8" height="8" opacity=".6"/><rect x="748" y="128" width="8" height="8"/>
-          <rect x="676" y="160" width="8" height="8"/><rect x="700" y="160" width="8" height="8" opacity=".4"/><rect x="724" y="160" width="8" height="8"/><rect x="748" y="160" width="8" height="8" opacity=".7"/>
-          <rect x="386" y="176" width="7" height="7"/><rect x="410" y="176" width="7" height="7" opacity=".5"/><rect x="434" y="176" width="7" height="7"/><rect x="410" y="210" width="7" height="7"/>
-          <rect x="570" y="150" width="7" height="7"/><rect x="596" y="150" width="7" height="7" opacity=".5"/><rect x="570" y="190" width="7" height="7"/>
-          <rect x="988" y="156" width="7" height="7"/><rect x="1014" y="156" width="7" height="7" opacity=".5"/><rect x="988" y="196" width="7" height="7"/>
-          <rect x="1168" y="195" width="7" height="7"/><rect x="1196" y="195" width="7" height="7" opacity=".5"/>
-          <rect x="812" y="170" width="7" height="7" opacity=".6"/><rect x="836" y="170" width="7" height="7"/>
+        <g>
+          <rect class="bar" x="188" y="380" width="24" height="70" fill="#0e9f6e"/><rect class="bar" x="288" y="350" width="24" height="60" fill="#0e9f6e"/>
+          <rect class="bar" x="388" y="380" width="24" height="70" fill="#c0455a"/><rect class="bar" x="488" y="320" width="24" height="80" fill="#0e9f6e"/>
+          <rect class="bar" x="588" y="340" width="24" height="70" fill="#c0455a"/><rect class="bar" x="688" y="280" width="24" height="80" fill="#0e9f6e"/>
+          <rect class="bar" x="788" y="310" width="24" height="70" fill="#c0455a"/><rect class="bar" x="888" y="240" width="24" height="80" fill="#0e9f6e"/>
+          <rect class="bar" x="988" y="270" width="24" height="70" fill="#0e9f6e"/><rect class="bar" x="1088" y="200" width="24" height="80" fill="#0e9f6e"/><rect class="bar" x="1188" y="230" width="24" height="70" fill="#0e9f6e"/>
         </g>
-        <g fill="#43d6a0" opacity=".9"><rect x="724" y="192" width="8" height="8"/><rect x="410" y="290" width="7" height="7"/><rect x="1014" y="300" width="7" height="7"/></g>
-        <rect x="0" y="360" width="1440" height="40" fill="url(#water)"/>
-        <g fill="#f0c274" opacity=".14"><rect x="712" y="360" width="4" height="34"/><rect x="410" y="360" width="3" height="30"/><rect x="1010" y="360" width="3" height="26"/></g>
+        <polyline class="draw" fill="none" stroke="#0e9f6e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="200,415 300,380 400,415 500,360 600,375 700,320 800,345 900,280 1000,305 1100,240 1200,265"/>
+        <circle class="pulse" cx="1100" cy="240" r="7" fill="#0e9f6e"/>
+        <text class="float-a" x="1130" y="215" fill="#43d6a0" font-family="Jost,sans-serif" font-size="28" font-weight="500">+2.4%</text>
       </svg>
     </div>
-    <!-- Cinematic hero slideshow — images crossfade into each other; skyline shows if they fail -->
-    <div class="hero__slides" aria-hidden="true">
-      <img class="hero__photo is-active" src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_220511_473319b3-9d35-4710-a495-64954e415c50.png" data-photo alt="Aerial view of Canary Wharf, London at dusk" fetchpriority="high" />
-      <img class="hero__photo" src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221649_b92006b2-5bbf-46bd-a709-1ad254365969_min.webp" data-photo alt="Riverside development at dusk" loading="lazy" />
-      <img class="hero__photo" src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221608_792a5bc3-3a4a-4bbc-9d4d-6a161c0922f2_min.webp" data-photo alt="City skyline duplex interior" loading="lazy" />
-      <img class="hero__photo" src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_221050_5c261c9f-7062-47f0-9321-d88b102fdaa6_min.webp" data-photo alt="Riverside penthouse interior" loading="lazy" />
+
+    <!-- SCENE 2 · BONDS -->
+    <div class="show__scene" aria-hidden="true">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice">
+        <g class="sv-grid"><line x1="0" y1="180" x2="1440" y2="180"/><line x1="0" y1="320" x2="1440" y2="320"/><line x1="0" y1="460" x2="1440" y2="460"/></g>
+        <path class="draw" fill="none" stroke="#c9a45e" stroke-width="3" stroke-linecap="round" d="M160,470 C440,455 560,360 800,340 S1160,240 1320,205"/>
+        <g stroke="#c9a45e" stroke-width="2" opacity=".6">
+          <line x1="320" y1="430" x2="320" y2="470"/><line x1="520" y1="360" x2="520" y2="410"/><line x1="720" y1="345" x2="720" y2="395"/><line x1="920" y1="300" x2="920" y2="350"/><line x1="1120" y1="255" x2="1120" y2="305"/>
+        </g>
+        <g>
+          <ellipse class="bar" cx="380" cy="470" rx="52" ry="16" fill="none" stroke="#c9a45e" stroke-width="2"/>
+          <ellipse class="bar" cx="380" cy="446" rx="52" ry="16" fill="none" stroke="#c9a45e" stroke-width="2"/>
+          <ellipse class="bar" cx="380" cy="422" rx="52" ry="16" fill="none" stroke="#e0c07a" stroke-width="2"/>
+        </g>
+        <circle class="pulse" cx="1320" cy="205" r="7" fill="#c9a45e"/>
+        <text class="float-b" x="1140" y="235" fill="#e0c07a" font-family="Jost,sans-serif" font-size="26" font-weight="500">4.2% yield</text>
+      </svg>
     </div>
+
+    <!-- SCENE 3 · COMPANY SHARES -->
+    <div class="show__scene" aria-hidden="true">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice">
+        <g transform="translate(430,300)">
+          <circle r="120" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="36"/>
+          <circle class="donut-gold" r="120" fill="none" stroke="#c9a45e" stroke-width="36" stroke-linecap="butt" transform="rotate(-90)"/>
+          <circle class="donut" r="120" fill="none" stroke="#0e9f6e" stroke-width="36" stroke-linecap="butt" transform="rotate(-90)"/>
+          <text x="0" y="6" text-anchor="middle" fill="#eaf1f8" font-family="Cormorant Garamond,serif" font-size="58">65%</text>
+          <text x="0" y="44" text-anchor="middle" fill="#8ea0bb" font-family="Jost,sans-serif" font-size="15" letter-spacing="3">HELD</text>
+        </g>
+        <g>
+          <rect class="bar" x="820" y="330" width="46" height="120" fill="#22344f"/><rect class="bar" x="890" y="290" width="46" height="160" fill="#2c4361"/>
+          <rect class="bar" x="960" y="250" width="46" height="200" fill="#0e9f6e" opacity=".85"/><rect class="bar" x="1030" y="300" width="46" height="150" fill="#2c4361"/><rect class="bar" x="1100" y="230" width="46" height="220" fill="#22344f"/>
+        </g>
+        <text class="float-a" x="820" y="300" fill="#43d6a0" font-family="Jost,sans-serif" font-size="24" font-weight="500">Equity</text>
+      </svg>
+    </div>
+
+    <!-- SCENE 4 · FOREX -->
+    <div class="show__scene" aria-hidden="true">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice">
+        <g class="spin-slow" style="transform-origin:720px 300px" opacity=".28">
+          <ellipse cx="720" cy="300" rx="250" ry="250" fill="none" stroke="#6f86ad" stroke-width="1"/>
+          <ellipse cx="720" cy="300" rx="250" ry="110" fill="none" stroke="#6f86ad" stroke-width="1"/>
+          <ellipse cx="720" cy="300" rx="120" ry="250" fill="none" stroke="#6f86ad" stroke-width="1"/>
+          <line x1="470" y1="300" x2="970" y2="300" stroke="#6f86ad" stroke-width="1"/>
+        </g>
+        <path class="dash-move" d="M470,250 C580,180 760,180 880,235" fill="none" stroke="#c9a45e" stroke-width="2.5"/>
+        <path class="dash-move" d="M560,380 C680,440 840,440 960,360" fill="none" stroke="#0e9f6e" stroke-width="2.5"/>
+        <g class="float-a"><circle cx="430" cy="230" r="52" fill="rgba(14,159,110,.14)" stroke="#0e9f6e" stroke-width="1.5"/><text x="430" y="248" text-anchor="middle" fill="#eaf1f8" font-family="Cormorant Garamond,serif" font-size="46">$</text></g>
+        <g class="float-b"><circle cx="1010" cy="230" r="52" fill="rgba(201,164,94,.14)" stroke="#c9a45e" stroke-width="1.5"/><text x="1010" y="248" text-anchor="middle" fill="#eaf1f8" font-family="Cormorant Garamond,serif" font-size="46">&#8364;</text></g>
+        <g class="float-b"><circle cx="470" cy="400" r="46" fill="rgba(255,255,255,.06)" stroke="#6f86ad" stroke-width="1.5"/><text x="470" y="416" text-anchor="middle" fill="#eaf1f8" font-family="Cormorant Garamond,serif" font-size="40">&#163;</text></g>
+        <g class="float-a"><circle cx="980" cy="400" r="46" fill="rgba(255,255,255,.06)" stroke="#6f86ad" stroke-width="1.5"/><text x="980" y="416" text-anchor="middle" fill="#eaf1f8" font-family="Cormorant Garamond,serif" font-size="40">&#165;</text></g>
+        <text class="float-a" x="660" y="150" fill="#43d6a0" font-family="Jost,sans-serif" font-size="24" font-weight="500">GBP/USD 1.28</text>
+      </svg>
+    </div>
+
+    <!-- SCENE 5 · PROPERTY (skyline) -->
+    <div class="show__scene" aria-hidden="true">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice">
+        <g fill="#0f1a30">
+          <rect x="120" y="300" width="80" height="300"/><rect x="220" y="250" width="90" height="350"/><rect x="330" y="330" width="60" height="270"/><rect x="470" y="220" width="86" height="380"/>
+          <rect x="600" y="170" width="110" height="430"/><polygon points="600,170 655,120 710,170"/>
+          <rect x="740" y="250" width="80" height="350"/><rect x="850" y="300" width="70" height="300"/><rect x="960" y="230" width="92" height="370"/><rect x="1080" y="300" width="70" height="300"/><rect x="1170" y="260" width="90" height="340"/><rect x="1290" y="290" width="80" height="310"/>
+        </g>
+        <g fill="#f0c274" opacity=".85" class="pulse">
+          <rect x="622" y="200" width="8" height="8"/><rect x="646" y="200" width="8" height="8"/><rect x="670" y="200" width="8" height="8"/><rect x="622" y="240" width="8" height="8"/><rect x="670" y="240" width="8" height="8"/>
+          <rect x="500" y="260" width="7" height="7"/><rect x="524" y="260" width="7" height="7"/><rect x="988" y="270" width="7" height="7"/><rect x="1012" y="270" width="7" height="7"/>
+        </g>
+        <g fill="#43d6a0" opacity=".9"><rect x="646" y="300" width="8" height="8"/><rect x="500" y="320" width="7" height="7"/></g>
+      </svg>
+    </div>
+
     <div class="hero__scrim"></div>
-    <div class="wrap hero__inner reveal">
-      <span class="hero__badge"><span class="dot"></span> Prime London property &amp; investment</span>
-      <h1 class="display hero__title">Property, worth<br>your while.</h1>
-      <p class="hero__sub">Landmark residences and investment opportunities across London's most coveted addresses — acquired, developed and managed with quiet precision.</p>
-      <div class="hero__ctas">
-        <a href="#portfolio" class="btn btn--accent">Explore the portfolio</a>
-        <a href="investment.html" class="btn btn--light">Investment enquiries</a>
+
+    <div class="wrap hero__inner">
+      <span class="eyebrow show__eyebrow" data-show-eyebrow>01 / Stocks</span>
+      <h1 class="display hero__title show__title" data-show-title aria-live="polite">&nbsp;</h1>
+      <p class="hero__sub show__sub" data-show-sub>&nbsp;</p>
+      <div class="show__ctas">
+        <a href="investment.html" class="btn btn--accent">Explore what we do</a>
+        <a href="#enquire" class="btn btn--light">Speak to an adviser</a>
       </div>
-      <p class="hero__trust"><b>RICS-regulated</b> &nbsp;·&nbsp; Est. 2009 &nbsp;·&nbsp; £2.4bn delivered</p>
+      <p class="hero__trust"><b>FCA-authorised</b> &nbsp;·&nbsp; Est. 2009 &nbsp;·&nbsp; &pound;2.4bn under advice</p>
     </div>
-    <div class="scroll-cue"><span></span>Scroll</div>
+
+    <!-- manual toggle menu box -->
+    <div class="show__menu" role="tablist" aria-label="What we do">
+      <button type="button" role="tab" data-go="0" class="is-active"><span class="n">01</span> Stocks</button>
+      <button type="button" role="tab" data-go="1"><span class="n">02</span> Bonds</button>
+      <button type="button" role="tab" data-go="2"><span class="n">03</span> Shares</button>
+      <button type="button" role="tab" data-go="3"><span class="n">04</span> Forex</button>
+      <button type="button" role="tab" data-go="4"><span class="n">05</span> Property</button>
+    </div>
+
+    <div class="show__progress"><i></i></div>
   </section>
 
   <!-- CREDENTIALS MARQUEE -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee__track">
-      <span>Prime Central London</span><span>RICS Regulated</span><span>£2.4bn Delivered</span><span>Since 2009</span><span>Off-Market Access</span>
-      <span>Prime Central London</span><span>RICS Regulated</span><span>£2.4bn Delivered</span><span>Since 2009</span><span>Off-Market Access</span>
+      <span>Stocks · Bonds · Shares · Forex · Property</span><span>FCA-Authorised</span><span>£2.4bn Under Advice</span><span>Since 2009</span><span>Global Markets</span>
+      <span>Stocks · Bonds · Shares · Forex · Property</span><span>FCA-Authorised</span><span>£2.4bn Under Advice</span><span>Since 2009</span><span>Global Markets</span>
     </div>
   </div>
 
   <!-- STATEMENT -->
   <section class="section wrap">
     <div class="statement reveal">
-      <p>For over fifteen years, Worthwhile has acquired, designed and delivered some of London's most considered addresses — homes to live in, and assets that endure.</p>
+      <p>For over fifteen years, Worthwhile has helped private clients and institutions build and protect wealth across every major asset class — stocks, bonds, company shares, currencies and property.</p>
     </div>
   </section>
 
@@ -125,7 +190,7 @@
   <section class="section wrap" id="portfolio" style="padding-top:0">
     <div class="section__head center reveal">
       <span class="eyebrow">Featured Residences</span>
-      <h2 class="display section__title">A portfolio of landmark homes</h2>
+      <h2 class="display section__title" data-type>A portfolio of landmark homes</h2>
       <p>A selection of current and recently delivered residences across prime London.</p>
     </div>
     <div class="products">
@@ -161,28 +226,28 @@
   <section class="stats">
     <div class="section wrap">
       <div class="stats__grid">
-        <div class="stat reveal"><div class="stat__num"><span class="accent">£</span><span data-count="2.4" data-decimals="1">0</span><span class="accent">bn</span></div><div class="stat__label">Delivered since 2009</div></div>
-        <div class="stat reveal" data-reveal-delay="1"><div class="stat__num"><span data-count="1200" data-suffix="+">0</span></div><div class="stat__label">Residences created</div></div>
+        <div class="stat reveal"><div class="stat__num"><span class="accent">£</span><span data-count="2.4" data-decimals="1">0</span><span class="accent">bn</span></div><div class="stat__label">Under advice</div></div>
+        <div class="stat reveal" data-reveal-delay="1"><div class="stat__num"><span data-count="9000" data-suffix="+">0</span></div><div class="stat__label">Clients &amp; institutions</div></div>
         <div class="stat reveal" data-reveal-delay="2"><div class="stat__num"><span data-count="8.5" data-decimals="1">0</span><span class="accent">%</span></div><div class="stat__label">Avg. annual return*</div></div>
-        <div class="stat reveal" data-reveal-delay="3"><div class="stat__num"><span data-count="14">0</span></div><div class="stat__label">Landmark developments</div></div>
+        <div class="stat reveal" data-reveal-delay="3"><div class="stat__num"><span data-count="30" data-suffix="+">0</span></div><div class="stat__label">Global markets</div></div>
       </div>
     </div>
   </section>
 
-  <!-- THE OFFER -->
+  <!-- WHAT WE DO -->
   <section class="section wrap">
     <div class="section__head center reveal">
       <span class="eyebrow">What We Do</span>
-      <h2 class="display section__title">End to end, in-house</h2>
-      <p>From first acquisition to final key, every stage is handled by one team.</p>
+      <h2 class="display section__title" data-type>Five ways we grow your wealth</h2>
+      <p>One firm, every major asset class — advised, managed and reported in one place.</p>
     </div>
     <div class="features">
-      <article class="feature reveal"><div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><h3>Acquisition</h3><p>Off-market sourcing of prime sites and standing stock, with rigorous due diligence.</p></article>
-      <article class="feature reveal" data-reveal-delay="1"><div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-4 6 4v11M10 20v-5h4v5"/></svg></div><h3>Development</h3><p>Ground-up delivery and refurbishment, on time and to an exacting specification.</p></article>
-      <article class="feature reveal" data-reveal-delay="2"><div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></div><h3>Investment</h3><p>Structured opportunities for private clients and institutions, targeting resilient returns.</p></article>
-      <article class="feature reveal"><div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 21l-5-2.9 1-5.5-4-3.9 5.5-.8z"/></svg></div><h3>Interior Design</h3><p>An in-house studio creating interiors of lasting quality, tailored to each residence.</p></article>
-      <article class="feature reveal" data-reveal-delay="1"><div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M3 7h18v13H3zM3 7l3-4h12l3 4M9 12h6"/></svg></div><h3>Management</h3><p>Lettings, property and asset management to protect and grow your investment.</p></article>
-      <article class="feature reveal" data-reveal-delay="2"><div class="feature__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><h3>Advisory</h3><p>Discreet, independent guidance on portfolio strategy, financing and succession.</p></article>
+      <article class="feature reveal"><div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></div><h3>Stocks</h3><p>Global equities, ETFs and indices — researched, diversified and traded at institutional cost.</p><a href="investment.html">Learn more</a></article>
+      <article class="feature reveal" data-reveal-delay="1"><div class="feature__ico"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M3 11h18"/></svg></div><h3>Bonds</h3><p>Government and corporate bonds structured for steady, dependable income.</p><a href="investment.html">Learn more</a></article>
+      <article class="feature reveal" data-reveal-delay="2"><div class="feature__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3"/></svg></div><h3>Company Shares</h3><p>Direct equity in public and private companies — from blue-chips to pre-IPO.</p><a href="investment.html">Learn more</a></article>
+      <article class="feature reveal"><div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg></div><h3>Forex</h3><p>Currency exchange and hedging at interbank mid-market rates across 30+ pairs.</p><a href="investment.html">Learn more</a></article>
+      <article class="feature reveal" data-reveal-delay="1"><div class="feature__ico"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><h3>Property</h3><p>Prime London property and development — landmark residences and investment opportunities.</p><a href="#portfolio">Learn more</a></article>
+      <article class="feature reveal" data-reveal-delay="2"><div class="feature__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><h3>Wealth Advisory</h3><p>Independent guidance that ties all five together into one coherent strategy.</p><a href="investment.html">Learn more</a></article>
     </div>
   </section>
 
@@ -204,7 +269,7 @@
   <section class="section wrap">
     <div class="section__head center reveal">
       <span class="eyebrow">Selected Work</span>
-      <h2 class="display section__title">The Portfolio</h2>
+      <h2 class="display section__title" data-type>The Portfolio</h2>
       <p>A glimpse of residences and developments delivered across prime London.</p>
     </div>
     <div class="lookbook reveal">
@@ -222,7 +287,7 @@
     <div class="wrap">
       <div class="section__head center reveal">
         <span class="eyebrow">Investment Calculator</span>
-        <h2 class="display section__title">Model your return</h2>
+        <h2 class="display section__title" data-type>Model your return</h2>
         <p>Prime London property has delivered strong long-term capital growth. Explore an illustrative projection.</p>
       </div>
       <div class="calc__wrap reveal">
@@ -243,7 +308,7 @@
   <section class="section wrap" id="locations">
     <div class="section__head center reveal">
       <span class="eyebrow">Where We Operate</span>
-      <h2 class="display section__title">Prime London addresses</h2>
+      <h2 class="display section__title" data-type>Prime London addresses</h2>
     </div>
     <div class="cats reveal">
       <a class="cat" href="investment.html"><div class="ph" data-label="Canary Wharf" style="--g1:#26364f;--g2:#0c1220"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2y2lBQzxjJ3VOy4SBD9rRfOAYGX/hf_20260727_220511_473319b3-9d35-4710-a495-64954e415c50_min.webp" alt="Canary Wharf" loading="lazy"></div><div class="cat__label"><span class="t">Canary Wharf<span class="sub">Riverside &amp; docklands</span></span><span class="arrow">→</span></div></a>
@@ -258,14 +323,14 @@
     <div class="section wrap">
       <div class="section__head center reveal">
         <span class="eyebrow" style="color:var(--brass)">Why Worthwhile</span>
-        <h2 class="display section__title" style="color:#fff">A safe pair of hands</h2>
+        <h2 class="display section__title" style="color:#fff" data-type>A safe pair of hands</h2>
         <p style="color:#93a0b4">Fifteen years of delivery, one accountable team, and access others don't have.</p>
       </div>
       <div class="secure__grid reveal">
-        <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/></svg><h4>RICS-regulated</h4><p>Held to the standards of the Royal Institution of Chartered Surveyors.</p></div>
-        <div class="badge"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-4 6 4v11"/></svg><h4>£2.4bn delivered</h4><p>A fifteen-year track record across landmark developments.</p></div>
-        <div class="badge"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><h4>Off-market access</h4><p>Opportunities that never reach the open market, reserved for clients.</p></div>
-        <div class="badge"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><h4>End-to-end service</h4><p>Acquisition, design, delivery and management under one roof.</p></div>
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/></svg><h4>FCA-authorised</h4><p>Regulated by the Financial Conduct Authority.</p></div>
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-4 6 4v11"/></svg><h4>£2.4bn under advice</h4><p>A fifteen-year, multi-asset track record.</p></div>
+        <div class="badge"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><h4>Segregated funds</h4><p>Client money held separately, at tier-1 banks.</p></div>
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><h4>Independent advice</h4><p>Whole-of-market, aligned to your objectives.</p></div>
       </div>
     </div>
   </section>
@@ -274,9 +339,9 @@
   <section class="press">
     <div class="section wrap">
       <div class="press__grid">
-        <blockquote class="press__quote reveal">“They found us an off-market home we'd never have seen otherwise.”<span class="press__by">Private client · Mayfair</span></blockquote>
-        <blockquote class="press__quote reveal" data-reveal-delay="1">“The delivery quality is a cut above anything else in the Wharf.”<span class="press__by">Investor · Canary Wharf</span></blockquote>
-        <blockquote class="press__quote reveal" data-reveal-delay="2">“One team from search to keys — genuinely effortless.”<span class="press__by">Family office</span></blockquote>
+        <blockquote class="press__quote reveal">“Equities, bonds and property — finally managed in one place.”<span class="press__by">Private client</span></blockquote>
+        <blockquote class="press__quote reveal" data-reveal-delay="1">“Their FX desk alone saved us six figures last year.”<span class="press__by">Finance director</span></blockquote>
+        <blockquote class="press__quote reveal" data-reveal-delay="2">“One adviser across every asset class — genuinely effortless.”<span class="press__by">Family office</span></blockquote>
         <blockquote class="press__quote reveal" data-reveal-delay="3">“Our portfolio has compounded quietly for a decade.”<span class="press__by">Institutional partner</span></blockquote>
       </div>
     </div>
@@ -293,7 +358,7 @@
     <div class="cta__scrim"></div>
     <div class="cta__inner wrap reveal">
       <span class="eyebrow" style="color:var(--brass)">Private consultation</span>
-      <h2 class="display section__title" style="color:#fff;margin-top:1rem">Let's find something worth your while</h2>
+      <h2 class="display section__title" style="color:#fff;margin-top:1rem" data-type>Let's find something worth your while</h2>
       <p>Register your interest and a director will be in touch to arrange a private, no-obligation consultation.</p>
       <form class="lead-form" data-lead novalidate>
         <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required />
@@ -307,7 +372,7 @@
   <section class="news section">
     <div class="wrap reveal">
       <span class="eyebrow">The Investment Brief</span>
-      <h2 class="display section__title" style="margin-top:1rem">Prime London, in your inbox</h2>
+      <h2 class="display section__title" style="margin-top:1rem" data-type>Prime London, in your inbox</h2>
       <p style="max-width:46ch;margin:1rem auto 0;color:var(--stone)">Market insight, new releases and off-market opportunities — a considered note, monthly.</p>
       <form class="news__form" novalidate>
         <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required />
@@ -323,7 +388,7 @@
     <div class="wrap">
       <div class="footer__top">
         <div class="footer__brand">
-          <a class="brand" href="index.html">Worthwhile<small>London</small></a>
+          <a class="brand" href="index.html">Worthwhile<small>Fintech</small></a>
           <p>A prime London property and investment house. Acquisition, development, design and management — since 2009.</p>
           <div class="socials">
             <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></svg></a>
@@ -345,7 +410,7 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu">
-    <div class="mobile-menu__head"><a class="brand" href="index.html">Worthwhile<small>London</small></a><button class="mobile-menu__close" aria-label="Close"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="1.3"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button></div>
+    <div class="mobile-menu__head"><a class="brand" href="index.html">Worthwhile<small>Fintech</small></a><button class="mobile-menu__close" aria-label="Close"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="1.3"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button></div>
     <nav class="mobile-menu__links">
       <a href="#portfolio">Portfolio</a>
       <a href="investment.html">Investment</a>

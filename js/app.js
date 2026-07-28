@@ -26,20 +26,83 @@
     else img.addEventListener("load", () => {});
   });
 
-  // Hero slideshow: images crossfade into each other; a failed one hides so the skyline shows
-  const heroSlides = $$(".hero__photo");
-  heroSlides.forEach((img) => {
-    const hide = () => { img.style.display = "none"; };
-    img.addEventListener("error", hide);
-    if (img.complete && img.naturalWidth === 0) hide();
-  });
-  if (heroSlides.length > 1 && !REDUCE) {
-    let hi = 0;
-    setInterval(() => {
-      heroSlides[hi].classList.remove("is-active");
-      hi = (hi + 1) % heroSlides.length;
-      heroSlides[hi].classList.add("is-active");
-    }, 5200);
+  /* ---------------------------------------------------------------
+     Typewriter helper — types text into an element, returns a cancel fn
+     --------------------------------------------------------------- */
+  function typeInto(el, text, speed) {
+    el.textContent = "";
+    el.setAttribute("data-typing", "");
+    let i = 0, stopped = false;
+    (function tick() {
+      if (stopped) return;
+      el.textContent = text.slice(0, i);
+      if (i++ < text.length) setTimeout(tick, speed);
+      else el.removeAttribute("data-typing");
+    })();
+    return () => { stopped = true; el.removeAttribute("data-typing"); };
+  }
+
+  /* ---------------------------------------------------------------
+     1a. Multi-asset showcase — 5 categories, animated scenes,
+         typed headlines, auto-rotate + manual toggle menu
+     --------------------------------------------------------------- */
+  const showcase = $("[data-showcase]");
+  if (showcase) {
+    const CATS = [
+      { eyebrow: "01 / Stocks",         title: "Invest in the world's markets.", sub: "Global equities, ETFs and indices — researched, diversified, and traded at institutional cost." },
+      { eyebrow: "02 / Bonds",          title: "Income you can count on.",       sub: "Government and corporate bonds, structured for steady, dependable yield." },
+      { eyebrow: "03 / Company Shares", title: "Own a stake in tomorrow.",       sub: "Direct equity in public and private companies — from blue-chips to pre-IPO." },
+      { eyebrow: "04 / Forex",          title: "Trade at the mid-market.",        sub: "Currency exchange and hedging at interbank rates across 30+ pairs." },
+      { eyebrow: "05 / Property",       title: "Bricks that build wealth.",       sub: "Prime London property and development — landmark residences and investment." },
+    ];
+    const scenes = $$(".show__scene", showcase);
+    const tabs   = $$(".show__menu button", showcase);
+    const eyeEl  = $("[data-show-eyebrow]", showcase);
+    const titleEl= $("[data-show-title]", showcase);
+    const subEl  = $("[data-show-sub]", showcase);
+    const prog   = $(".show__progress", showcase);
+    const DUR = 6500;
+    let idx = -1, timer = null, cT = null, token = 0;
+
+    function render(i) {
+      idx = (i + CATS.length) % CATS.length;
+      const my = ++token;
+      scenes.forEach((s, k) => s.classList.toggle("is-active", k === idx));
+      tabs.forEach((b, k) => { const on = k === idx; b.classList.toggle("is-active", on); b.setAttribute("aria-selected", on ? "true" : "false"); });
+      const c = CATS[idx];
+      if (eyeEl) eyeEl.textContent = c.eyebrow;
+      if (cT) cT();
+      if (REDUCE) { titleEl.textContent = c.title; subEl.textContent = c.sub; }
+      else {
+        subEl.textContent = "";
+        cT = typeInto(titleEl, c.title, 42);
+        setTimeout(() => { if (my === token) typeInto(subEl, c.sub, 16); }, c.title.length * 42 + 350);
+      }
+      if (prog) { prog.classList.remove("run"); void prog.offsetWidth; if (!REDUCE) prog.classList.add("run"); }
+    }
+    const play = () => { stop(); if (!REDUCE) timer = setInterval(() => render(idx + 1), DUR); };
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    tabs.forEach((b, k) => b.addEventListener("click", () => { render(k); play(); }));
+    showcase.addEventListener("mouseenter", stop);
+    showcase.addEventListener("mouseleave", play);
+    render(0); play();
+  }
+
+  /* ---------------------------------------------------------------
+     1c. Typewriter for section headings marked [data-type]
+     --------------------------------------------------------------- */
+  const typeHeads = $$("[data-type]");
+  if (typeHeads.length && "IntersectionObserver" in window) {
+    const tio = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        tio.unobserve(en.target);
+        const el = en.target, txt = el.textContent.trim();
+        el.style.minHeight = el.offsetHeight + "px";   // reserve space so typing doesn't reflow
+        if (!REDUCE) typeInto(el, txt, 24);
+      });
+    }, { threshold: 0.6 });
+    typeHeads.forEach((el) => { el.setAttribute("aria-label", el.textContent.trim()); tio.observe(el); });
   }
 
   /* ---------------------------------------------------------------
