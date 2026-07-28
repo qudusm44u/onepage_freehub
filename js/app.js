@@ -79,7 +79,7 @@
     const subEl  = $("[data-show-sub]", showcase);
     const infoEl = $("[data-show-info]", showcase);
     const prog   = $(".show__progress", showcase);
-    const DUR = 6500;
+    const durFor = (i) => (i === 4 ? 11000 : 6200);   // property lingers longer before cycling back
     let idx = -1, timer = null, cT = null, token = 0;
 
     function render(i) {
@@ -101,10 +101,13 @@
         cT = typeInto(titleEl, c.title, 42);
         setTimeout(() => { if (my === token) typeInto(subEl, c.sub, 16); }, c.title.length * 42 + 350);
       }
-      if (prog) { prog.classList.remove("run"); void prog.offsetWidth; if (!REDUCE) prog.classList.add("run"); }
+      if (prog) {
+        prog.style.setProperty("--dur", (durFor(idx) / 1000) + "s");
+        prog.classList.remove("run"); void prog.offsetWidth; if (!REDUCE) prog.classList.add("run");
+      }
     }
-    const play = () => { stop(); if (!REDUCE) timer = setInterval(() => render(idx + 1), DUR); };
-    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function stop() { if (timer) { clearTimeout(timer); timer = null; } }
+    const play = () => { stop(); if (!REDUCE) timer = setTimeout(() => { render(idx + 1); play(); }, durFor(idx)); };
     tabs.forEach((b, k) => b.addEventListener("click", () => { render(k); play(); }));
     showcase.addEventListener("mouseenter", stop);
     showcase.addEventListener("mouseleave", play);

@@ -16,17 +16,18 @@ html.lenis, html.lenis body { height: auto; }
 /* ---------- Design tokens ---------- */
 :root {
   /* palette — modern fintech: deep ink-navy, cool paper, emerald accent */
-  --noir:      #0a0e17;   /* near-black navy — dark sections, buttons, footer */
-  --ink:       #131a26;   /* primary text */
-  --stone:     #5b6472;   /* muted body text on light */
-  --bone:      #f5f6f9;   /* primary background (cool paper) */
-  --sand:      #ebeef3;   /* section alt background */
-  --linen:     #e2e7ee;
-  --line:      #d7dde6;   /* hairline borders */
-  --brass:     #0e9f6e;   /* accent — emerald (trust / growth), used sparingly */
-  --brass-dk:  #0a7d55;
-  --accent-soft: rgba(14,159,110,.12);
-  --navy:      #0f1826;   /* deep panel */
+  --noir:      #0c1411;   /* deep forest-charcoal — dark sections, buttons, footer */
+  --ink:       #17231e;   /* primary text — warm near-black, softer than pure black */
+  --stone:     #5e655e;   /* muted body text on light */
+  --bone:      #f4f1ea;   /* primary background — warm editorial ivory */
+  --sand:      #ece6da;   /* section alt background */
+  --linen:     #e4ddcd;
+  --line:      #ddd5c5;   /* hairline borders */
+  --brass:     #0f9169;   /* accent — deep emerald (growth), used sparingly */
+  --brass-dk:  #0a6f4f;
+  --gold:      #c9a45e;   /* champagne gold — secondary accent */
+  --accent-soft: rgba(15,145,105,.12);
+  --navy:      #101c17;   /* deep panel */
   --white:     #ffffff;
 
   /* typography */
@@ -778,14 +779,16 @@ html.js .reveal.is-in .cat .ph { clip-path: inset(0%); }
 
 /* Dark palette — flips the light "paper" surfaces to deep navy */
 :root[data-theme="dark"] {
-  --ink:   #e6ecf4;   /* text becomes light */
-  --stone: #97a3b4;   /* muted text */
-  --bone:  #0c1119;   /* page background */
-  --sand:  #121a28;   /* alt sections */
-  --linen: #1a2436;
-  --line:  #253145;   /* hairlines */
-  --white: #131c2b;   /* card surfaces */
-  /* --noir, --navy, --brass keep their (already dark) values */
+  --ink:   #e9ede7;   /* text — warm off-white, not pure white */
+  --stone: #9aa59d;   /* muted text */
+  --bone:  #121a18;   /* page background — lifted deep charcoal-green (not too dark) */
+  --sand:  #17211e;   /* alt sections */
+  --linen: #1f2a26;
+  --line:  #2a3833;   /* hairlines */
+  --white: #17211e;   /* card surfaces */
+  --noir:  #0d1614;   /* keep dark sections a touch above pure black */
+  --navy:  #12201b;
+  /* --brass / --gold keep their values */
 }
 :root[data-theme="dark"] .announce { color: #e6ecf4; }
 :root[data-theme="dark"] .btn { border-color: var(--ink); color: var(--ink); }
@@ -1117,3 +1120,60 @@ a.card { display: block; color: inherit; }
 .show__info span::before { content: ""; position: absolute; left: 0; top: 50%; width: 6px; height: 6px;
   border-radius: 50%; background: var(--brass); transform: translateY(-50%); }
 @media (max-width: 560px) { .show__info { gap: .9rem; } .show__info span { font-size: .58rem; } }
+
+/* =====================================================================
+   ============  LONDON BACKDROP + PROPERTY GALLERY (v2)  ==============
+   ===================================================================== */
+
+/* Shared Canary Wharf / London backdrop sits behind scenes 1–4 and
+   drifts slowly (Ken Burns) for continuous, candyldn-style motion. */
+.show__london { position: absolute; inset: 0; z-index: -3; overflow: hidden; background: #0b1220; }
+.show__london img { width: 100%; height: 100%; object-fit: cover;
+  animation: kenburns 46s ease-in-out infinite alternate; }
+@keyframes kenburns {
+  from { transform: scale(1.06) translate3d(0, 0, 0); }
+  to   { transform: scale(1.16) translate3d(-2%, -2%, 0); }
+}
+
+/* Scenes now let the London backdrop read through with a graded tint
+   (readable, not muddy) instead of an opaque fill. */
+.show__scene {
+  background: linear-gradient(180deg, rgba(7,12,11,.56) 0%, rgba(9,15,14,.64) 52%, rgba(8,13,12,.80) 100%);
+}
+
+/* Property scene — real London homes cross-fade in, one after another. */
+.show__scene--property { background: #0b0f10; }
+.show__gallery { position: absolute; inset: 0; z-index: 0; }
+.show__gallery img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; will-change: opacity, transform;
+}
+.show__scene--property::after {          /* legibility scrim over the photos */
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(6,10,9,.40) 0%, rgba(6,10,9,.26) 45%, rgba(6,10,9,.72) 100%);
+}
+/* Only cycle while the property scene is the active one — five homes,
+   ~26s loop, each with a gentle Ken-Burns push as it shows. */
+.show__scene--property.is-active .show__gallery img {
+  animation: prop-cycle 26s cubic-bezier(.4,0,.2,1) infinite;
+}
+.show__scene--property.is-active .show__gallery img:nth-child(1) { animation-delay: 0s; }
+.show__scene--property.is-active .show__gallery img:nth-child(2) { animation-delay: 5.2s; }
+.show__scene--property.is-active .show__gallery img:nth-child(3) { animation-delay: 10.4s; }
+.show__scene--property.is-active .show__gallery img:nth-child(4) { animation-delay: 15.6s; }
+.show__scene--property.is-active .show__gallery img:nth-child(5) { animation-delay: 20.8s; }
+@keyframes prop-cycle {
+  0%   { opacity: 0; transform: scale(1.04); }
+  6%   { opacity: 1; }
+  20%  { opacity: 1; transform: scale(1.11); }
+  26%  { opacity: 0; transform: scale(1.12); }
+  100% { opacity: 0; }
+}
+
+/* progress bar duration is driven per-category from JS (--dur) */
+.show__progress.run i { animation: show-progress var(--dur, 6.5s) linear forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .show__london img, .show__scene--property .show__gallery img { animation: none !important; }
+  .show__scene--property .show__gallery img:first-child { opacity: 1; }
+}
